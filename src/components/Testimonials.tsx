@@ -78,15 +78,13 @@ const Testimonials = () => {
               </div>
               <div>
                 <h4 className="font-bold">Birjoo Vaishnav</h4>
-                <p className="text-sm text-gray-500">Foodie Delights</p>
+                <p className="text-sm text-gray-500">Art of Living</p>
               </div>
             </div>
             <div className="mb-4">
               <span className="text-yellow-400 text-lg">★★★★★</span>
             </div>
-            <p className="text-gray-600">
-              "The WhatsApp integration is brilliant - our customers actually respond! We've seen a 40% increase in reviews and the referral rewards program has brought in dozens of new customers each month."
-            </p>
+            <p className="text-gray-600">This is an awesome creative service which will benefit millions!</p>
           </div>
         </div>
 
