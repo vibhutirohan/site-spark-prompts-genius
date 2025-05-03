@@ -36,14 +36,7 @@ const HowItWorks = () => {
   return (
     <section id="how-it-works" ref={sectionRef} className="py-20 bg-[#E9D5FF]/20">
       <div className="section-container">
-        <h2 className="section-title fade-in-scroll">
-          <span className="gradient-text">How It Works</span>
-        </h2>
-        <p className="section-subtitle fade-in-scroll text-[#111827]">
-          Uplaud seamlessly integrates with your customer journey to collect reviews and generate referrals.
-        </p>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
           <div className="bg-white rounded-xl shadow-md p-8 relative fade-in-scroll hover:shadow-lg transition-all duration-300">
             <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-uplaud-purple text-white w-12 h-12 rounded-full flex items-center justify-center text-2xl font-bold">
               1
@@ -91,9 +84,6 @@ const HowItWorks = () => {
         </div>
         
         <div className="mt-16 text-center">
-          <p className="text-lg text-[#111827] max-w-3xl mx-auto mb-8 fade-in-scroll">
-            The Uplaud platform handles everything from sending review requests to managing rewards and tracking performance.
-          </p>
           <div className="mt-6 fade-in-scroll">
             <button className="bg-[#5EEAD4] hover:bg-[#5EEAD4]/80 text-[#111827] font-medium px-8 py-3 rounded-lg flex items-center justify-center mx-auto">
               Start Collecting Reviews
