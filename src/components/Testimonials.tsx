@@ -40,7 +40,7 @@ const Testimonials = () => {
           <div className="bg-white rounded-xl shadow-md p-8 fade-in-scroll">
             <div className="flex items-center mb-6">
               <div className="bg-uplaud-purple/10 rounded-full w-12 h-12 flex items-center justify-center mr-3">
-                <span className="font-bold text-uplaud-purple">TC</span>
+                <span className="font-bold text-uplaud-purple">BV</span>
               </div>
               <div>
                 <h4 className="font-bold">Balaji Venkataswamy</h4>
@@ -58,28 +58,26 @@ const Testimonials = () => {
           <div className="bg-white rounded-xl shadow-md p-8 fade-in-scroll">
             <div className="flex items-center mb-6">
               <div className="bg-uplaud-purple/10 rounded-full w-12 h-12 flex items-center justify-center mr-3">
-                <span className="font-bold text-uplaud-purple">RJ</span>
+                <span className="font-bold text-uplaud-purple">CP</span>
               </div>
               <div>
-                <h4 className="font-bold">Rebecca Johnson</h4>
-                <p className="text-sm text-gray-500">Boutique Retail</p>
+                <h4 className="font-bold">Charul Pel</h4>
+                <p className="text-sm text-gray-500">GRC3</p>
               </div>
             </div>
             <div className="mb-4">
               <span className="text-yellow-400 text-lg">★★★★★</span>
             </div>
-            <p className="text-gray-600">
-              "As a small business, authentic word-of-mouth is everything. Uplaud made it simple to collect reviews and turn our happy customers into our best marketing channel. Worth every penny!"
-            </p>
+            <p className="text-gray-600">"As a new business, authentic word-of-mouth is everything. Uplaud made it simple to collect reviews and turn our happy customers into our best marketing channel. Worth every penny!"</p>
           </div>
           
           <div className="bg-white rounded-xl shadow-md p-8 fade-in-scroll">
             <div className="flex items-center mb-6">
               <div className="bg-uplaud-purple/10 rounded-full w-12 h-12 flex items-center justify-center mr-3">
-                <span className="font-bold text-uplaud-purple">DM</span>
+                <span className="font-bold text-uplaud-purple">BV</span>
               </div>
               <div>
-                <h4 className="font-bold">Daniel Martinez</h4>
+                <h4 className="font-bold">Birjoo Vaishnav</h4>
                 <p className="text-sm text-gray-500">Foodie Delights</p>
               </div>
             </div>
@@ -93,23 +91,13 @@ const Testimonials = () => {
         </div>
 
         <div className="mt-16 fade-in-scroll">
-          <h3 className="text-xl font-bold text-center mb-8">Trusted by companies worldwide</h3>
+          
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
-            <div className="bg-gray-200 h-12 w-32 rounded flex items-center justify-center">
-              <span className="text-gray-500 font-bold">COMPANY</span>
-            </div>
-            <div className="bg-gray-200 h-12 w-32 rounded flex items-center justify-center">
-              <span className="text-gray-500 font-bold">BRAND</span>
-            </div>
-            <div className="bg-gray-200 h-12 w-32 rounded flex items-center justify-center">
-              <span className="text-gray-500 font-bold">LOGO</span>
-            </div>
-            <div className="bg-gray-200 h-12 w-32 rounded flex items-center justify-center">
-              <span className="text-gray-500 font-bold">PARTNER</span>
-            </div>
-            <div className="bg-gray-200 h-12 w-32 rounded flex items-center justify-center">
-              <span className="text-gray-500 font-bold">CLIENT</span>
-            </div>
+            
+            
+            
+            
+            
           </div>
         </div>
       </div>
