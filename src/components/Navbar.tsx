@@ -25,7 +25,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
-              <img alt="Uplaud Logo" src="/lovable-uploads/243df48d-7c4e-4d16-ae82-0215b1e164ad.png" className="h-10 w-auto object-fill" />
+              <img alt="Uplaud Logo" className="h-10 w-auto object-fill" src="/lovable-uploads/912dc859-87c7-4946-9049-a3a7f1132ef9.png" />
               
             </Link>
           </div>
