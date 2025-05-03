@@ -1,41 +1,33 @@
-
 import React, { useRef, useEffect } from "react";
-
 const UpcomingFeatures = () => {
   const sectionRef = useRef<HTMLElement>(null);
-
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("appear");
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("appear");
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
     const section = sectionRef.current;
     if (section) {
       const fadeElements = section.querySelectorAll(".fade-in-scroll");
-      fadeElements.forEach((element) => {
+      fadeElements.forEach(element => {
         observer.observe(element);
       });
     }
-
     return () => {
       if (section) {
         const fadeElements = section.querySelectorAll(".fade-in-scroll");
-        fadeElements.forEach((element) => {
+        fadeElements.forEach(element => {
           observer.unobserve(element);
         });
       }
     };
   }, []);
-
-  return (
-    <section id="features" ref={sectionRef} className="py-20 bg-white">
+  return <section id="features" ref={sectionRef} className="bg-white py-0">
       <div className="section-container">
         <h2 className="section-title fade-in-scroll">
           Coming <span className="gradient-text">Soon</span>
@@ -83,36 +75,9 @@ const UpcomingFeatures = () => {
         </div>
         
         <div className="mt-16">
-          <div className="bg-uplaud-purple/5 border border-uplaud-purple/20 rounded-xl p-8 fade-in-scroll">
-            <div className="flex flex-col md:flex-row items-center justify-between">
-              <div className="mb-6 md:mb-0 md:mr-8">
-                <h3 className="text-2xl font-bold mb-3">Stay Updated</h3>
-                <p className="text-gray-600 max-w-md">
-                  Join our waitlist to be the first to know when these exciting features are released and get early access.
-                </p>
-              </div>
-              
-              <div className="w-full md:w-auto">
-                <form className="flex flex-col sm:flex-row gap-3">
-                  <input
-                    type="email"
-                    placeholder="Enter your email"
-                    className="px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-uplaud-purple focus:border-transparent"
-                  />
-                  <button
-                    type="submit"
-                    className="bg-uplaud-purple hover:bg-uplaud-dark-purple text-white px-6 py-3 rounded-lg font-medium transition-colors"
-                  >
-                    Join Waitlist
-                  </button>
-                </form>
-              </div>
-            </div>
-          </div>
+          
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default UpcomingFeatures;
