@@ -21,12 +21,10 @@ const Hero = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
-              <Button size="lg" className="bg-uplaud-purple hover:bg-uplaud-dark-purple text-white text-lg px-6">
+              <Button size="lg" className="hover:bg-uplaud-dark-purple text-white text-lg px-6 font-normal bg-teal-600 hover:bg-teal-500">
                 Get Started
               </Button>
-              <Button size="lg" variant="outline" className="border-uplaud-purple text-uplaud-purple hover:bg-uplaud-purple/10 text-lg px-6">
-                See How It Works
-              </Button>
+              <Button size="lg" variant="outline" className="border-uplaud-purple text-lg px-6 bg-uplaud-purple text-slate-50">Try it !</Button>
             </div>
           </div>
           
