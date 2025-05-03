@@ -1,41 +1,33 @@
-
 import React, { useRef, useEffect } from "react";
-
 const HowItWorks = () => {
   const sectionRef = useRef<HTMLElement>(null);
-
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("appear");
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("appear");
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
     const section = sectionRef.current;
     if (section) {
       const fadeElements = section.querySelectorAll(".fade-in-scroll");
-      fadeElements.forEach((element) => {
+      fadeElements.forEach(element => {
         observer.observe(element);
       });
     }
-
     return () => {
       if (section) {
         const fadeElements = section.querySelectorAll(".fade-in-scroll");
-        fadeElements.forEach((element) => {
+        fadeElements.forEach(element => {
           observer.unobserve(element);
         });
       }
     };
   }, []);
-
-  return (
-    <section id="how-it-works" ref={sectionRef} className="py-20 bg-gray-50">
+  return <section id="how-it-works" ref={sectionRef} className="py-20 bg-gray-50">
       <div className="section-container">
         <h2 className="section-title fade-in-scroll">How It Works</h2>
         <p className="section-subtitle fade-in-scroll">
@@ -88,9 +80,7 @@ const HowItWorks = () => {
                 </svg>
               </div>
               <h3 className="text-xl font-bold mb-4">Growth</h3>
-              <p className="text-gray-600">
-                Happy customers are rewarded for sharing referrals, driving new business and improving your online reputation.
-              </p>
+              <p className="text-gray-600">We convert reviews to one click referrals. Delight customers, reward loyalty, and grow 3X faster.</p>
             </div>
           </div>
         </div>
@@ -101,8 +91,6 @@ const HowItWorks = () => {
           </p>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HowItWorks;

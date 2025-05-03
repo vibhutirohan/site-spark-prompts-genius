@@ -10,10 +10,7 @@ const Footer = () => {
               <span className="ml-2 text-2xl font-bold text-uplaud-purple">
             </span>
             </div>
-            <p className="text-gray-600 max-w-xs mb-6">
-              Real Reviews. Real People. Real Growth. 
-              Turn happy customers into powerful referrals.
-            </p>
+            <p className="text-gray-600 max-w-xs mb-6">Turn Reviews to Revenue.</p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-500 hover:text-uplaud-purple transition-colors">
                 <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -76,9 +73,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-600 hover:text-uplaud-purple transition-colors">
-                  Contact
-                </a>
+                <a href="#" className="text-gray-600 hover:text-uplaud-purple transition-colors"></a>
               </li>
             </ul>
           </div>
