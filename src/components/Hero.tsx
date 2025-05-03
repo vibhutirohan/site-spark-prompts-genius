@@ -1,18 +1,15 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { CheckCheck } from "lucide-react";
-
 const Hero = () => {
-  return (
-    <section className="relative pt-24 pb-20 md:pt-32 md:pb-28 overflow-hidden">
+  return <section className="relative pt-24 pb-20 md:pt-32 md:pb-28 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-uplaud-purple/5 to-transparent z-0"></div>
       
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col lg:flex-row items-center">
           <div className="w-full lg:w-1/2 text-center lg:text-left mb-10 lg:mb-0">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-              <span>Real Reviews.</span>
+              <span className="">Real Reviews.</span>
               <br />
               <span>Real People.</span>
               <br />
@@ -102,7 +99,7 @@ const Hero = () => {
                       <p className="text-sm">Thanks for your review for Fanatic Sports!</p>
                       <p className="text-sm mt-2">Here is your review:</p>
                       <p className="text-sm mt-2">I highly recommend Fanatic Sports for all travel and sports ticketing. I booked my IPL tickets + hotel +travel package with them, and it was superb! I was taken care of at every step of the way and got great seats for the match. Also got a great price from them, and they are very professional. You should definitely try them!</p>
-                      <p className="text-sm mt-3 font-medium">Uplaud Score (Star rating) : <br/>5/5</p>
+                      <p className="text-sm mt-3 font-medium">Uplaud Score (Star rating) : <br />5/5</p>
                       <div className="flex justify-between items-center mt-1">
                         <div></div>
                         <span className="text-xs text-gray-500">8:32 PM</span>
@@ -144,8 +141,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
