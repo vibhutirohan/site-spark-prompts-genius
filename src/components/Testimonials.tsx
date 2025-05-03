@@ -1,0 +1,128 @@
+
+import React, { useRef, useEffect } from "react";
+
+const Testimonials = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("appear");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const section = sectionRef.current;
+    if (section) {
+      const fadeElements = section.querySelectorAll(".fade-in-scroll");
+      fadeElements.forEach((element) => {
+        observer.observe(element);
+      });
+    }
+
+    return () => {
+      if (section) {
+        const fadeElements = section.querySelectorAll(".fade-in-scroll");
+        fadeElements.forEach((element) => {
+          observer.unobserve(element);
+        });
+      }
+    };
+  }, []);
+
+  return (
+    <section ref={sectionRef} className="py-20 bg-gray-50">
+      <div className="section-container">
+        <h2 className="section-title fade-in-scroll">
+          Trusted by <span className="gradient-text">Forward-Thinking Businesses</span>
+        </h2>
+        <p className="section-subtitle fade-in-scroll">
+          See what our customers are saying about the Uplaud experience.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+          <div className="bg-white rounded-xl shadow-md p-8 fade-in-scroll">
+            <div className="flex items-center mb-6">
+              <div className="bg-uplaud-purple/10 rounded-full w-12 h-12 flex items-center justify-center mr-3">
+                <span className="font-bold text-uplaud-purple">TC</span>
+              </div>
+              <div>
+                <h4 className="font-bold">Thomas Carter</h4>
+                <p className="text-sm text-gray-500">Tech Innovations Co.</p>
+              </div>
+            </div>
+            <div className="mb-4">
+              <span className="text-yellow-400 text-lg">★★★★★</span>
+            </div>
+            <p className="text-gray-600">
+              "Uplaud has transformed how we collect customer feedback. Our review rate increased by 65% and the quality of insights is exceptional. The referral system has been a game-changer for our growth."
+            </p>
+          </div>
+          
+          <div className="bg-white rounded-xl shadow-md p-8 fade-in-scroll">
+            <div className="flex items-center mb-6">
+              <div className="bg-uplaud-purple/10 rounded-full w-12 h-12 flex items-center justify-center mr-3">
+                <span className="font-bold text-uplaud-purple">RJ</span>
+              </div>
+              <div>
+                <h4 className="font-bold">Rebecca Johnson</h4>
+                <p className="text-sm text-gray-500">Boutique Retail</p>
+              </div>
+            </div>
+            <div className="mb-4">
+              <span className="text-yellow-400 text-lg">★★★★★</span>
+            </div>
+            <p className="text-gray-600">
+              "As a small business, authentic word-of-mouth is everything. Uplaud made it simple to collect reviews and turn our happy customers into our best marketing channel. Worth every penny!"
+            </p>
+          </div>
+          
+          <div className="bg-white rounded-xl shadow-md p-8 fade-in-scroll">
+            <div className="flex items-center mb-6">
+              <div className="bg-uplaud-purple/10 rounded-full w-12 h-12 flex items-center justify-center mr-3">
+                <span className="font-bold text-uplaud-purple">DM</span>
+              </div>
+              <div>
+                <h4 className="font-bold">Daniel Martinez</h4>
+                <p className="text-sm text-gray-500">Foodie Delights</p>
+              </div>
+            </div>
+            <div className="mb-4">
+              <span className="text-yellow-400 text-lg">★★★★★</span>
+            </div>
+            <p className="text-gray-600">
+              "The WhatsApp integration is brilliant - our customers actually respond! We've seen a 40% increase in reviews and the referral rewards program has brought in dozens of new customers each month."
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-16 fade-in-scroll">
+          <h3 className="text-xl font-bold text-center mb-8">Trusted by companies worldwide</h3>
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+            <div className="bg-gray-200 h-12 w-32 rounded flex items-center justify-center">
+              <span className="text-gray-500 font-bold">COMPANY</span>
+            </div>
+            <div className="bg-gray-200 h-12 w-32 rounded flex items-center justify-center">
+              <span className="text-gray-500 font-bold">BRAND</span>
+            </div>
+            <div className="bg-gray-200 h-12 w-32 rounded flex items-center justify-center">
+              <span className="text-gray-500 font-bold">LOGO</span>
+            </div>
+            <div className="bg-gray-200 h-12 w-32 rounded flex items-center justify-center">
+              <span className="text-gray-500 font-bold">PARTNER</span>
+            </div>
+            <div className="bg-gray-200 h-12 w-32 rounded flex items-center justify-center">
+              <span className="text-gray-500 font-bold">CLIENT</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Testimonials;
