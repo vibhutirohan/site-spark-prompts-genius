@@ -1,6 +1,7 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
+import { CheckCheck } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -34,49 +35,103 @@ const Hero = () => {
           
           <div className="w-full lg:w-1/2 lg:pl-12">
             <div className="relative mx-auto max-w-md">
-              <div className="bg-white rounded-xl shadow-2xl overflow-hidden border border-gray-100">
-                <div className="bg-uplaud-purple p-4 flex items-center">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                    <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                    <div className="w-3 h-3 rounded-full bg-green-500"></div>
+              {/* WhatsApp Chat Window */}
+              <div className="bg-white rounded-xl shadow-xl overflow-hidden border border-gray-200">
+                {/* WhatsApp Header */}
+                <div className="bg-[#128C7E] p-3 flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-full bg-uplaud-purple flex items-center justify-center">
+                    <span className="text-white font-bold">U</span>
                   </div>
-                  <span className="text-white text-sm ml-4">WhatsApp</span>
+                  <div>
+                    <p className="text-white font-medium">Uplaud AI</p>
+                    <p className="text-white/70 text-xs">online</p>
+                  </div>
                 </div>
-                <div className="p-4">
-                  <div className="flex items-start mb-4">
-                    <div className="bg-gray-100 rounded-lg p-3 max-w-[80%]">
-                      <p className="text-sm">Hi! How was your experience with our product?</p>
-                      <p className="text-xs text-gray-500 mt-1">Uplaud Business</p>
+                
+                {/* Chat Background */}
+                <div className="p-3 bg-[#E5DDD5] bg-opacity-50 bg-[url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABjSURBVEhLY2AY3sDd3Z2dm5v7JxCfBGIJqCxxAIg/AfFCIHbCpgGvBKkA5AJsrmHAJkEOALkIm2sYMCVIBSAXY3MNA7oEqQDkYpB+RlyKQRKkgEGQTQggpF4DraBRMPQAADEcR5GOguSiAAAAAElFTkSuQmCC')] h-[450px] overflow-y-auto flex flex-col space-y-3">
+                  {/* Date Header */}
+                  <div className="flex justify-center">
+                    <div className="bg-white py-1 px-4 rounded-full shadow-sm">
+                      <span className="text-gray-500 text-xs">5/1/2023</span>
                     </div>
                   </div>
                   
-                  <div className="flex items-start justify-end mb-4">
-                    <div className="bg-uplaud-purple/10 rounded-lg p-3 max-w-[80%]">
-                      <p className="text-sm">Absolutely loved it! The quality exceeded my expectations.</p>
-                      <p className="text-xs text-gray-500 mt-1">Customer</p>
+                  {/* System Message */}
+                  <div className="flex justify-center">
+                    <div className="bg-[#e1ffc7] bg-opacity-80 py-2 px-4 rounded-md max-w-[85%]">
+                      <p className="text-xs text-gray-600 text-center">
+                        This business uses a secure service from Meta to manage this chat. Click to learn more.
+                      </p>
                     </div>
                   </div>
                   
-                  <div className="flex items-start mb-4">
-                    <div className="bg-gray-100 rounded-lg p-3 max-w-[80%]">
-                      <p className="text-sm">Great to hear! Would you recommend us to others?</p>
-                      <p className="text-xs text-gray-500 mt-1">Uplaud Business</p>
+                  {/* Today Marker */}
+                  <div className="flex justify-center">
+                    <div className="bg-white py-1 px-4 rounded-full shadow-sm">
+                      <span className="text-gray-500 text-xs">TODAY</span>
                     </div>
                   </div>
                   
-                  <div className="flex items-start justify-end mb-4">
-                    <div className="bg-uplaud-purple/10 rounded-lg p-3 max-w-[80%]">
-                      <p className="text-sm">Definitely! Let me know how I can help.</p>
-                      <p className="text-xs text-gray-500 mt-1">Customer</p>
+                  {/* Customer Review Message */}
+                  <div className="flex justify-end">
+                    <div className="bg-[#DCF8C6] py-2 px-3 rounded-lg max-w-[85%] shadow-sm relative">
+                      <p className="text-sm">
+                        I highly recommend Fanatic Sports for all travel and sports ticketing. I used their services and here is my experience: I booked my IPL tickets + hotel +travel package with them, and it was superb! I was taken care of at every step of the way and got great seats for the match. Also got a great price from them, and they are very professional. You should definitely try them!
+                      </p>
+                      <div className="flex justify-between items-center mt-1">
+                        <div></div>
+                        <div className="flex items-center">
+                          <span className="text-xs text-gray-500 mr-1">8:31 PM</span>
+                          <CheckCheck className="h-4 w-4 text-[#53bdeb]" />
+                        </div>
+                      </div>
                     </div>
                   </div>
                   
-                  <div className="flex items-start">
-                    <div className="bg-gray-100 rounded-lg p-3 max-w-[80%]">
-                      <p className="text-sm">You just earned 100 points! Share this link with friends to earn more.</p>
-                      <p className="text-xs text-uplaud-purple underline mt-1">uplaud.com/refer/john</p>
-                      <p className="text-xs text-gray-500 mt-1">Uplaud Business</p>
+                  {/* Unread Messages Marker */}
+                  <div className="flex justify-center">
+                    <div className="bg-[#ffc8c8] py-1 px-4 rounded-full shadow-sm">
+                      <span className="text-gray-700 text-xs">2 UNREAD MESSAGES</span>
+                    </div>
+                  </div>
+                  
+                  {/* Uplaud Message 1 */}
+                  <div className="flex justify-start">
+                    <div className="bg-white py-2 px-3 rounded-lg max-w-[85%] shadow-sm">
+                      <p className="text-sm">Thanks for your review for Fanatic Sports!</p>
+                      <p className="text-sm mt-2">Here is your review:</p>
+                      <p className="text-sm mt-2">I highly recommend Fanatic Sports for all travel and sports ticketing. I booked my IPL tickets + hotel +travel package with them, and it was superb! I was taken care of at every step of the way and got great seats for the match. Also got a great price from them, and they are very professional. You should definitely try them!</p>
+                      <p className="text-sm mt-3 font-medium">Uplaud Score (Star rating) : <br/>5/5</p>
+                      <div className="flex justify-between items-center mt-1">
+                        <div></div>
+                        <span className="text-xs text-gray-500">8:32 PM</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Uplaud Message 2 */}
+                  <div className="flex justify-start">
+                    <div className="bg-white py-2 px-3 rounded-lg max-w-[85%] shadow-sm">
+                      <p className="text-sm">We created this short blurb for you 👆, Share this review with your friend who may need it!</p>
+                      <div className="flex justify-between items-center mt-1">
+                        <div></div>
+                        <span className="text-xs text-gray-500">8:32 PM</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Uplaud Message 3 */}
+                  <div className="flex justify-start">
+                    <div className="bg-white py-2 px-3 rounded-lg max-w-[85%] shadow-sm">
+                      <p className="text-sm">Do your good deed for the day—Tap below to share your review with your friends 👋</p>
+                      <div className="mt-2">
+                        <a href="#" className="text-blue-600 underline">https://go.uplaud.ai/RTXYBX</a>
+                      </div>
+                      <div className="flex justify-between items-center mt-1">
+                        <div></div>
+                        <span className="text-xs text-gray-500">8:32 PM</span>
+                      </div>
                     </div>
                   </div>
                 </div>
