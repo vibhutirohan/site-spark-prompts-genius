@@ -46,9 +46,7 @@ const HowItWorks = () => {
                 </svg>
               </div>
               <h3 className="text-xl font-bold mb-4">Invite</h3>
-              <p className="text-gray-600">
-                Send review requests to your customers via WhatsApp after their purchase or service experience.
-              </p>
+              <p className="text-gray-600">Send review requests to your customers via WhatsApp- or any other channel, after their purchase or service experience.</p>
             </div>
           </div>
           
@@ -63,9 +61,7 @@ const HowItWorks = () => {
                 </svg>
               </div>
               <h3 className="text-xl font-bold mb-4">Feedback</h3>
-              <p className="text-gray-600">
-                Customers share their experience through a conversational WhatsApp flow that feels natural and engaging.
-              </p>
+              <p className="text-gray-600">Customers share their experience through a conversational WhatsApp flow that feels natural and engaging. Collect reviews via text, or voice notes- in over 50 languages.</p>
             </div>
           </div>
           
