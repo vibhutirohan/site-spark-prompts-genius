@@ -1,5 +1,7 @@
 
 import React, { useRef, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Share, Users } from "lucide-react";
 
 const ForCustomers = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -147,6 +149,60 @@ const ForCustomers = () => {
                   <h4 className="text-xl font-semibold mb-2">Quick and Convenient</h4>
                   <p className="text-gray-600">Share feedback directly on WhatsApp. No apps to install or complicated forms to fill out.</p>
                 </div>
+              </div>
+            </div>
+            
+            {/* New Section: Discover recommendations */}
+            <div className="mt-10 p-5 bg-white rounded-xl shadow-md fade-in-scroll">
+              <h3 className="text-xl md:text-2xl font-bold mb-4">
+                Discover what your friends are recommending
+              </h3>
+              
+              <div className="flex items-center gap-4 mb-4">
+                <div className="flex -space-x-3">
+                  <div className="w-10 h-10 rounded-full bg-blue-400 flex items-center justify-center text-white text-sm border-2 border-white">JD</div>
+                  <div className="w-10 h-10 rounded-full bg-green-400 flex items-center justify-center text-white text-sm border-2 border-white">KL</div>
+                  <div className="w-10 h-10 rounded-full bg-purple-400 flex items-center justify-center text-white text-sm border-2 border-white">MN</div>
+                  <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-600 text-sm border-2 border-white">+8</div>
+                </div>
+                <p className="text-gray-600 text-sm">8 friends are active in Uplaud Circles</p>
+              </div>
+              
+              <div className="space-y-4">
+                <div className="p-3 bg-gray-50 rounded-lg">
+                  <div className="flex items-center mb-2">
+                    <div className="w-8 h-8 rounded-full bg-uplaud-purple/10 flex items-center justify-center mr-2">
+                      <span className="font-bold text-uplaud-purple">AK</span>
+                    </div>
+                    <div>
+                      <p className="font-medium">Alex K.</p>
+                      <p className="text-xs text-gray-500">2 hours ago</p>
+                    </div>
+                  </div>
+                  <p className="text-sm text-gray-700">"Just tried the new coffee place downtown - amazing pastries and great atmosphere!"</p>
+                </div>
+                
+                <div className="p-3 bg-gray-50 rounded-lg">
+                  <div className="flex items-center mb-2">
+                    <div className="w-8 h-8 rounded-full bg-uplaud-purple/10 flex items-center justify-center mr-2">
+                      <span className="font-bold text-uplaud-purple">JT</span>
+                    </div>
+                    <div>
+                      <p className="font-medium">Jamie T.</p>
+                      <p className="text-xs text-gray-500">Yesterday</p>
+                    </div>
+                  </div>
+                  <p className="text-sm text-gray-700">"This tech repair shop saved my laptop! Great service and reasonable prices."</p>
+                </div>
+              </div>
+              
+              <div className="flex space-x-3 mt-4">
+                <Button variant="outline" size="sm" className="flex items-center">
+                  <Share className="h-4 w-4 mr-1" /> Share Recommendation
+                </Button>
+                <Button variant="outline" size="sm" className="flex items-center">
+                  <Users className="h-4 w-4 mr-1" /> Join Circles
+                </Button>
               </div>
             </div>
           </div>
