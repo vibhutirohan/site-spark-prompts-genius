@@ -73,9 +73,7 @@ const Hero = () => {
                   {/* Customer Review Message */}
                   <div className="flex justify-end">
                     <div className="bg-[#DCF8C6] py-2 px-3 rounded-lg max-w-[85%] shadow-sm relative">
-                      <p className="text-sm">
-                        I highly recommend Fanatic Sports for all travel and sports ticketing. I used their services and here is my experience: I booked my IPL tickets + hotel +travel package with them, and it was superb! I was taken care of at every step of the way and got great seats for the match. Also got a great price from them, and they are very professional. You should definitely try them!
-                      </p>
+                      <p className="text-sm">I highly recommend Trailblazer Travels for all travel and sports ticketing. I used their services and here is my experience: I booked my IPL tickets + hotel +travel package with them, and it was superb! I was taken care of at every step of the way and got great seats for the match. Also got a great price from them, and they are very professional. You should definitely try them!</p>
                       <div className="flex justify-between items-center mt-1">
                         <div></div>
                         <div className="flex items-center">
