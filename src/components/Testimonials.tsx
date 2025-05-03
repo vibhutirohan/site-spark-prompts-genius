@@ -1,41 +1,33 @@
-
 import React, { useRef, useEffect } from "react";
-
 const Testimonials = () => {
   const sectionRef = useRef<HTMLElement>(null);
-
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("appear");
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("appear");
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
     const section = sectionRef.current;
     if (section) {
       const fadeElements = section.querySelectorAll(".fade-in-scroll");
-      fadeElements.forEach((element) => {
+      fadeElements.forEach(element => {
         observer.observe(element);
       });
     }
-
     return () => {
       if (section) {
         const fadeElements = section.querySelectorAll(".fade-in-scroll");
-        fadeElements.forEach((element) => {
+        fadeElements.forEach(element => {
           observer.unobserve(element);
         });
       }
     };
   }, []);
-
-  return (
-    <section ref={sectionRef} className="py-20 bg-gray-50">
+  return <section ref={sectionRef} className="py-20 bg-gray-50">
       <div className="section-container">
         <h2 className="section-title fade-in-scroll">
           Trusted by <span className="gradient-text">Forward-Thinking Businesses</span>
@@ -51,8 +43,8 @@ const Testimonials = () => {
                 <span className="font-bold text-uplaud-purple">TC</span>
               </div>
               <div>
-                <h4 className="font-bold">Thomas Carter</h4>
-                <p className="text-sm text-gray-500">Tech Innovations Co.</p>
+                <h4 className="font-bold">Balaji Venkataswamy</h4>
+                <p className="text-sm text-gray-500">Balaji On Brand</p>
               </div>
             </div>
             <div className="mb-4">
@@ -121,8 +113,6 @@ const Testimonials = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Testimonials;
