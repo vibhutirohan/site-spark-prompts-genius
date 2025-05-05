@@ -1,45 +1,39 @@
 import React, { useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-
 interface ForBusinessesProps {
   className?: string;
 }
-
-const ForBusinesses = ({ className = "" }: ForBusinessesProps) => {
+const ForBusinesses = ({
+  className = ""
+}: ForBusinessesProps) => {
   const sectionRef = useRef<HTMLElement>(null);
-
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("appear");
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("appear");
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
     const section = sectionRef.current;
     if (section) {
       const fadeElements = section.querySelectorAll(".fade-in-scroll");
-      fadeElements.forEach((element) => {
+      fadeElements.forEach(element => {
         observer.observe(element);
       });
     }
-
     return () => {
       if (section) {
         const fadeElements = section.querySelectorAll(".fade-in-scroll");
-        fadeElements.forEach((element) => {
+        fadeElements.forEach(element => {
           observer.unobserve(element);
         });
       }
     };
   }, []);
-
-  return (
-    <section id="for-businesses" ref={sectionRef} className={`py-20 ${className}`}>
+  return <section id="for-businesses" ref={sectionRef} className={`py-20 ${className}`}>
       <div className="section-container">
         <h2 className="section-title fade-in-scroll">
           Turn Customer Love Into <span className="gradient-text">Business Growth.</span>
@@ -63,7 +57,7 @@ const ForBusinesses = ({ className = "" }: ForBusinessesProps) => {
                 </div>
                 <div>
                   <h4 className="text-xl font-semibold mb-2">Boost Reviews</h4>
-                  <p className="text-gray-600">Get 60% more reviews via voice, text on WhatsApp.</p>
+                  <p className="text-slate-50">Get 60% more reviews via voice, text on WhatsApp.</p>
                 </div>
               </div>
               
@@ -75,7 +69,7 @@ const ForBusinesses = ({ className = "" }: ForBusinessesProps) => {
                 </div>
                 <div>
                   <h4 className="text-xl font-semibold mb-2">📣 Supercharge Social Proof</h4>
-                  <p className="text-gray-600">We transform reviews into viral, shareable social proof.</p>
+                  <p className="text-slate-50">We transform reviews into viral, shareable social proof.</p>
                 </div>
               </div>
               
@@ -87,7 +81,7 @@ const ForBusinesses = ({ className = "" }: ForBusinessesProps) => {
                 </div>
                 <div>
                   <h4 className="text-xl font-semibold mb-2">🎯 Maximize Revenue</h4>
-                  <p className="text-gray-600">Turn reviews into warm leads, reward your best advocates.</p>
+                  <p className="text-slate-50">Turn reviews into warm leads, reward your best advocates.</p>
                 </div>
               </div>
               
@@ -100,14 +94,12 @@ const ForBusinesses = ({ className = "" }: ForBusinessesProps) => {
                 </div>
                 <div>
                   <h4 className="text-xl font-semibold mb-2">Customizable Rewards</h4>
-                  <p className="text-gray-600">Design a loyalty program that aligns with your brand and resonates with your customers.</p>
+                  <p className="text-slate-50">Design a loyalty program that aligns with your brand and resonates with your customers.</p>
                 </div>
               </div>
               
               <div className="mt-8 fade-in-scroll">
-                <Button className="bg-uplaud-purple hover:bg-uplaud-dark-purple text-white">
-                  Start Growing Your Business
-                </Button>
+                <Button className="hover:bg-uplaud-dark-purple text-zinc-50 bg-emerald-600 hover:bg-emerald-500">Start Growing Your Business!</Button>
               </div>
             </div>
           </div>
@@ -120,7 +112,7 @@ const ForBusinesses = ({ className = "" }: ForBusinessesProps) => {
               
               <div className="p-6">
                 <div className="flex justify-between items-center mb-8">
-                  <h4 className="font-bold text-xl">Performance Overview</h4>
+                  <h4 className="font-bold text-xl text-gray-900">Performance Overview</h4>
                   <div className="bg-gray-100 rounded-lg px-3 py-1">
                     <span className="text-sm text-gray-500">Last 30 days</span>
                   </div>
@@ -173,7 +165,7 @@ const ForBusinesses = ({ className = "" }: ForBusinessesProps) => {
                 </div>
                 
                 <div className="mt-6">
-                  <h4 className="font-bold text-lg mb-4">Recent Reviews</h4>
+                  <h4 className="font-bold text-lg mb-4 text-gray-900">Recent Reviews</h4>
                   <div className="space-y-3">
                     <div className="border border-gray-200 rounded-lg p-3">
                       <div className="flex items-center mb-2">
@@ -211,8 +203,6 @@ const ForBusinesses = ({ className = "" }: ForBusinessesProps) => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ForBusinesses;

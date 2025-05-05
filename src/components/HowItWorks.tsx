@@ -1,13 +1,11 @@
-
 import React, { useRef, useEffect } from "react";
-
 interface HowItWorksProps {
   className?: string;
 }
-
-const HowItWorks = ({ className = "" }: HowItWorksProps) => {
+const HowItWorks = ({
+  className = ""
+}: HowItWorksProps) => {
   const sectionRef = useRef<HTMLElement>(null);
-  
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -18,7 +16,6 @@ const HowItWorks = ({ className = "" }: HowItWorksProps) => {
     }, {
       threshold: 0.1
     });
-    
     const section = sectionRef.current;
     if (section) {
       const fadeElements = section.querySelectorAll(".fade-in-scroll");
@@ -26,7 +23,6 @@ const HowItWorks = ({ className = "" }: HowItWorksProps) => {
         observer.observe(element);
       });
     }
-    
     return () => {
       if (section) {
         const fadeElements = section.querySelectorAll(".fade-in-scroll");
@@ -36,12 +32,10 @@ const HowItWorks = ({ className = "" }: HowItWorksProps) => {
       }
     };
   }, []);
-  
-  return (
-    <section id="how-it-works" ref={sectionRef} className={`py-20 ${className}`}>
+  return <section id="how-it-works" ref={sectionRef} className={`py-20 ${className}`}>
       <div className="section-container">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
-          <div className="bg-white/10 backdrop-blur-md rounded-xl shadow-md p-8 relative fade-in-scroll hover:shadow-lg transition-all duration-300 border border-white/20">
+          <div className="backdrop-blur-md rounded-xl shadow-md p-8 relative fade-in-scroll hover:shadow-lg transition-all duration-300 border border-white/20 bg-uplaud-purple">
             <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-[#5EEAD4] text-[#111827] w-12 h-12 rounded-full flex items-center justify-center text-2xl font-bold">
               1
             </div>
@@ -56,7 +50,7 @@ const HowItWorks = ({ className = "" }: HowItWorksProps) => {
             </div>
           </div>
           
-          <div className="bg-white/10 backdrop-blur-md rounded-xl shadow-md p-8 relative fade-in-scroll hover:shadow-lg transition-all duration-300 border border-white/20">
+          <div className="backdrop-blur-md rounded-xl shadow-md p-8 relative fade-in-scroll hover:shadow-lg transition-all duration-300 border border-white/20 bg-uplaud-purple">
             <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-[#5EEAD4] text-[#111827] w-12 h-12 rounded-full flex items-center justify-center text-2xl font-bold">
               2
             </div>
@@ -71,7 +65,7 @@ const HowItWorks = ({ className = "" }: HowItWorksProps) => {
             </div>
           </div>
           
-          <div className="bg-white/10 backdrop-blur-md rounded-xl shadow-md p-8 relative fade-in-scroll hover:shadow-lg transition-all duration-300 border border-white/20">
+          <div className="backdrop-blur-md rounded-xl shadow-md p-8 relative fade-in-scroll hover:shadow-lg transition-all duration-300 border border-white/20 bg-uplaud-purple">
             <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-[#5EEAD4] text-[#111827] w-12 h-12 rounded-full flex items-center justify-center text-2xl font-bold">
               3
             </div>
@@ -98,8 +92,6 @@ const HowItWorks = ({ className = "" }: HowItWorksProps) => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HowItWorks;

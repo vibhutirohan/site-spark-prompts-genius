@@ -43,8 +43,8 @@ const Testimonials = () => {
                 <span className="font-bold text-uplaud-purple">BV</span>
               </div>
               <div>
-                <h4 className="font-bold">Balaji Venkataswamy</h4>
-                <p className="text-sm text-gray-500">Balaji On Brand</p>
+                <h4 className="font-bold text-slate-900">Balaji Venkataswamy</h4>
+                <p className="text-sm text-gray-950">Balaji On Brand</p>
               </div>
             </div>
             <div className="mb-4">
@@ -61,8 +61,8 @@ const Testimonials = () => {
                 <span className="font-bold text-uplaud-purple">CP</span>
               </div>
               <div>
-                <h4 className="font-bold">Charul Pel</h4>
-                <p className="text-sm text-gray-500">GRC3</p>
+                <h4 className="font-bold text-slate-950">Charul Pel</h4>
+                <p className="text-sm text-gray-950">GRC3</p>
               </div>
             </div>
             <div className="mb-4">
@@ -77,8 +77,8 @@ const Testimonials = () => {
                 <span className="font-bold text-uplaud-purple">BV</span>
               </div>
               <div>
-                <h4 className="font-bold">Birjoo Vaishnav</h4>
-                <p className="text-sm text-gray-500">Art of Living</p>
+                <h4 className="font-bold text-slate-950">Birjoo Vaishnav</h4>
+                <p className="text-sm text-slate-950">Art of Living</p>
               </div>
             </div>
             <div className="mb-4">
