@@ -1,3 +1,4 @@
+
 import React, { useRef, useEffect } from "react";
 interface HowItWorksProps {
   className?: string;
@@ -46,7 +47,7 @@ const HowItWorks = ({
                 </svg>
               </div>
               <h3 className="text-xl font-bold mb-4 text-white">Invite</h3>
-              <p className="text-white/80">Send review requests to your customers via WhatsApp- or any other channel, after their purchase or service experience.</p>
+              <p className="text-white">Send review requests to your customers via WhatsApp- or any other channel, after their purchase or service experience.</p>
             </div>
           </div>
           
@@ -61,7 +62,7 @@ const HowItWorks = ({
                 </svg>
               </div>
               <h3 className="text-xl font-bold mb-4 text-white">Feedback</h3>
-              <p className="text-white/80">Customers share their experience through a conversational WhatsApp flow that feels natural and engaging. Collect reviews via text, or voice notes- in over 50 languages.</p>
+              <p className="text-white">Customers share their experience through a conversational WhatsApp flow that feels natural and engaging. Collect reviews via text, or voice notes- in over 50 languages.</p>
             </div>
           </div>
           
@@ -76,7 +77,7 @@ const HowItWorks = ({
                 </svg>
               </div>
               <h3 className="text-xl font-bold mb-4 text-white">Growth</h3>
-              <p className="text-white/80">We convert reviews to one click referrals. Delight customers, reward loyalty, and grow 3X faster.</p>
+              <p className="text-white">We convert reviews to one click referrals. Delight customers, reward loyalty, and grow 3X faster.</p>
             </div>
           </div>
         </div>

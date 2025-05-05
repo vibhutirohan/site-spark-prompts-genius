@@ -1,3 +1,4 @@
+
 import React, { useRef, useEffect } from "react";
 
 interface UpcomingFeaturesProps {
@@ -36,10 +37,10 @@ const UpcomingFeatures = ({ className = "" }: UpcomingFeaturesProps) => {
   
   return <section id="features" ref={sectionRef} className={`py-20 ${className}`}>
       <div className="section-container">
-        <h2 className="section-title fade-in-scroll">
+        <h2 className="section-title fade-in-scroll text-white">
           Coming <span className="gradient-text">Soon</span>
         </h2>
-        <p className="section-subtitle fade-in-scroll">
+        <p className="section-subtitle fade-in-scroll text-white">
           We're constantly evolving to bring you the best tools for customer feedback and referrals.
         </p>
 
@@ -50,8 +51,8 @@ const UpcomingFeatures = ({ className = "" }: UpcomingFeaturesProps) => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
               </svg>
             </div>
-            <h3 className="text-xl font-bold mb-3">Verified Badges</h3>
-            <p className="text-gray-600">
+            <h3 className="text-xl font-bold mb-3 text-slate-900">Verified Badges</h3>
+            <p className="text-slate-700">
               Boost credibility with verified customer badges displayed alongside reviews to add an extra layer of trust.
             </p>
           </div>
@@ -62,8 +63,8 @@ const UpcomingFeatures = ({ className = "" }: UpcomingFeaturesProps) => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
               </svg>
             </div>
-            <h3 className="text-xl font-bold mb-3">Points Marketplace</h3>
-            <p className="text-gray-600">
+            <h3 className="text-xl font-bold mb-3 text-slate-900">Points Marketplace</h3>
+            <p className="text-slate-700">
               A dynamic marketplace where customers can redeem their earned points for products, services, and exclusive offers.
             </p>
           </div>
@@ -74,8 +75,8 @@ const UpcomingFeatures = ({ className = "" }: UpcomingFeaturesProps) => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"></path>
               </svg>
             </div>
-            <h3 className="text-xl font-bold mb-3">Premium Loyalty Programs</h3>
-            <p className="text-gray-600">
+            <h3 className="text-xl font-bold mb-3 text-slate-900">Premium Loyalty Programs</h3>
+            <p className="text-slate-700">
               Advanced loyalty tiers with exclusive benefits for your most valuable customers and brand advocates.
             </p>
           </div>
