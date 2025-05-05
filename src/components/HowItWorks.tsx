@@ -72,7 +72,7 @@ const HowItWorks = ({
             <div className="text-center mt-4">
               <div className="bg-white/10 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
                 <svg className="w-10 h-10 text-[#5EEAD4]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0l-8 8-4-4-6 6"></path>
                 </svg>
               </div>
               <h3 className="text-xl font-bold mb-4 text-white">Growth</h3>
@@ -83,12 +83,17 @@ const HowItWorks = ({
         
         <div className="mt-16 text-center">
           <div className="mt-6 fade-in-scroll">
-            <button className="bg-[#5EEAD4] hover:bg-[#5EEAD4]/80 text-[#111827] font-medium px-8 py-3 rounded-lg flex items-center justify-center mx-auto">
+            <a 
+              href="https://docs.google.com/forms/d/e/1FAIpQLScOFSp2wEGN50-d58e43laMRW2RuPbEr4407R34pZVw4eDYhA/viewform?usp=header" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="bg-[#5EEAD4] hover:bg-[#5EEAD4]/80 text-[#111827] font-medium px-8 py-3 rounded-lg flex items-center justify-center mx-auto"
+            >
               Start Collecting Reviews
               <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
               </svg>
-            </button>
+            </a>
           </div>
         </div>
       </div>

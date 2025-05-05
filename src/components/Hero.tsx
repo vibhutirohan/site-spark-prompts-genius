@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { CheckCheck } from "lucide-react";
@@ -21,11 +22,15 @@ const Hero = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
-              <Button size="lg" className="text-lg px-6 font-normal bg-[#5EEAD4] hover:bg-[#5EEAD4]/80 text-[#111827]">
-                Get Started
+              <Button size="lg" className="text-lg px-6 font-normal bg-[#5EEAD4] hover:bg-[#5EEAD4]/80 text-[#111827]" asChild>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScOFSp2wEGN50-d58e43laMRW2RuPbEr4407R34pZVw4eDYhA/viewform?usp=header" target="_blank" rel="noopener noreferrer">
+                  Get Started
+                </a>
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-lg text-gray-900 bg-slate-50 px-[40px]">
-                Try it!
+              <Button size="lg" variant="outline" className="border-white text-lg text-gray-900 bg-slate-50 px-[40px]" asChild>
+                <a href="https://api.whatsapp.com/message/XVZR77KDFQMHI1" target="_blank" rel="noopener noreferrer">
+                  Try it!
+                </a>
               </Button>
             </div>
           </div>

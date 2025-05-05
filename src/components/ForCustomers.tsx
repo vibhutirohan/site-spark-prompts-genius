@@ -189,11 +189,15 @@ const ForCustomers = () => {
               </div>
               
               <div className="flex space-x-3 mt-4">
-                <Button variant="outline" size="sm" className="flex items-center text-uplaud-purple rounded-sm">
-                  <Share className="h-4 w-4 mr-1" /> Share Recommendation
+                <Button variant="outline" size="sm" className="flex items-center text-uplaud-purple rounded-sm" asChild>
+                  <a href="https://docs.google.com/forms/d/e/1FAIpQLScOFSp2wEGN50-d58e43laMRW2RuPbEr4407R34pZVw4eDYhA/viewform?usp=header" target="_blank" rel="noopener noreferrer">
+                    <Share className="h-4 w-4 mr-1" /> Share Recommendation
+                  </a>
                 </Button>
-                <Button variant="outline" size="sm" className="flex items-center text-uplaud-purple">
-                  <Users className="h-4 w-4 mr-1" /> Join Circles
+                <Button variant="outline" size="sm" className="flex items-center text-uplaud-purple" asChild>
+                  <a href="https://docs.google.com/forms/d/e/1FAIpQLScOFSp2wEGN50-d58e43laMRW2RuPbEr4407R34pZVw4eDYhA/viewform?usp=header" target="_blank" rel="noopener noreferrer">
+                    <Users className="h-4 w-4 mr-1" /> Join Circles
+                  </a>
                 </Button>
               </div>
             </div>
