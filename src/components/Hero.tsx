@@ -1,11 +1,9 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { CheckCheck } from "lucide-react";
-
 const Hero = () => {
   return <section className="relative pt-24 pb-20 md:pt-32 md:pb-28 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-[#6214a8]/30 to-[#6214a8] z-0"></div>
+      <div className=""></div>
       
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col lg:flex-row items-center">
@@ -38,8 +36,8 @@ const Hero = () => {
               <div className="bg-white rounded-xl shadow-xl overflow-hidden border border-gray-200">
                 {/* WhatsApp Header */}
                 <div className="bg-[#128C7E] p-3 flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-full bg-[#5EEAD4] flex items-center justify-center">
-                    <span className="text-[#111827] font-bold">U</span>
+                  <div className="w-9 h-9 rounded-full flex items-center justify-center bg-uplaud-purple">
+                    <span className="font-bold text-slate-50">U</span>
                   </div>
                   <div>
                     <p className="text-white font-medium">Uplaud AI</p>
@@ -143,5 +141,4 @@ const Hero = () => {
       </div>
     </section>;
 };
-
 export default Hero;
