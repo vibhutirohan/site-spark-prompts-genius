@@ -1,48 +1,40 @@
-
 import React, { useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Share, Users } from "lucide-react";
-
 const ForCustomers = () => {
   const sectionRef = useRef<HTMLElement>(null);
-
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("appear");
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("appear");
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
     const section = sectionRef.current;
     if (section) {
       const fadeElements = section.querySelectorAll(".fade-in-scroll");
-      fadeElements.forEach((element) => {
+      fadeElements.forEach(element => {
         observer.observe(element);
       });
     }
-
     return () => {
       if (section) {
         const fadeElements = section.querySelectorAll(".fade-in-scroll");
-        fadeElements.forEach((element) => {
+        fadeElements.forEach(element => {
           observer.unobserve(element);
         });
       }
     };
   }, []);
-
-  return (
-    <section id="for-customers" ref={sectionRef} className="py-20 bg-gray-50">
+  return <section id="for-customers" ref={sectionRef} className="py-20 bg-gray-50">
       <div className="section-container">
-        <h2 className="section-title fade-in-scroll">
-          Trusted Word of Mouth, <span className="gradient-text">Straight From WhatsApp.</span>
+        <h2 className="section-title fade-in-scroll text-uplaud-purple">
+          Trusted Word of Mouth, <span className="gradient-text text-gray-800">Straight From WhatsApp.</span>
         </h2>
-        <p className="section-subtitle fade-in-scroll">
+        <p className="section-subtitle fade-in-scroll text-gray-900">
           Uplaud makes it easy to share honest feedback and earn rewards for your loyalty.
         </p>
 
@@ -110,8 +102,8 @@ const ForCustomers = () => {
           </div>
           
           <div className="order-1 md:order-2">
-            <h3 className="text-2xl md:text-3xl font-bold mb-6 fade-in-scroll">
-              Your feedback is <span className="gradient-text">valuable</span>
+            <h3 className="text-2xl md:text-3xl font-bold mb-6 fade-in-scroll text-gray-900">
+              Your feedback is <span className="gradient-text font-bold text-zinc-800">valuable</span>
             </h3>
             
             <div className="space-y-6">
@@ -122,7 +114,7 @@ const ForCustomers = () => {
                   </svg>
                 </div>
                 <div>
-                  <h4 className="text-xl font-semibold mb-2">Verified Authenticity</h4>
+                  <h4 className="text-xl font-semibold mb-2 text-uplaud-purple">Verified Authenticity</h4>
                   <p className="text-gray-600">All reviews are from real customers. No fake profiles or generated content.</p>
                 </div>
               </div>
@@ -134,7 +126,7 @@ const ForCustomers = () => {
                   </svg>
                 </div>
                 <div>
-                  <h4 className="text-xl font-semibold mb-2">Earn While You Share</h4>
+                  <h4 className="text-xl font-semibold mb-2 text-uplaud-purple">Earn While You Share</h4>
                   <p className="text-gray-600">Get points for every review and referral. Redeem for rewards you'll actually want.</p>
                 </div>
               </div>
@@ -146,7 +138,7 @@ const ForCustomers = () => {
                   </svg>
                 </div>
                 <div>
-                  <h4 className="text-xl font-semibold mb-2">Quick and Convenient</h4>
+                  <h4 className="text-xl font-semibold mb-2 text-uplaud-purple">Quick and Convenient</h4>
                   <p className="text-gray-600">Share feedback directly on WhatsApp. No apps to install or complicated forms to fill out.</p>
                 </div>
               </div>
@@ -154,7 +146,7 @@ const ForCustomers = () => {
             
             {/* New Section: Discover recommendations */}
             <div className="mt-10 p-5 bg-white rounded-xl shadow-md fade-in-scroll">
-              <h3 className="text-xl md:text-2xl font-bold mb-4">
+              <h3 className="text-xl md:text-2xl mb-4 font-bold text-uplaud-purple">
                 Discover what your friends are recommending
               </h3>
               
@@ -208,8 +200,6 @@ const ForCustomers = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ForCustomers;

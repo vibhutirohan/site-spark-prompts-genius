@@ -24,7 +24,7 @@ const Hero = () => {
               <Button size="lg" className="text-lg px-6 font-normal bg-[#5EEAD4] hover:bg-[#5EEAD4]/80 text-[#111827]">
                 Get Started
               </Button>
-              <Button size="lg" variant="outline" className="border-white hover:bg-white/10 text-lg px-6 text-gray-900">
+              <Button size="lg" variant="outline" className="border-white text-lg text-gray-900 bg-slate-50 px-[40px]">
                 Try it!
               </Button>
             </div>
