@@ -31,10 +31,10 @@ const ForCustomers = () => {
   }, []);
   return <section id="for-customers" ref={sectionRef} className="py-20 bg-gray-50">
       <div className="section-container">
-        <h2 className="section-title fade-in-scroll text-uplaud-purple">
+        <h2 className="section-title fade-in-scroll text-slate-950">
           Trusted Word of Mouth, <span className="gradient-text text-gray-800">Straight From WhatsApp.</span>
         </h2>
-        <p className="section-subtitle fade-in-scroll text-gray-900">
+        <p className="section-subtitle fade-in-scroll text-slate-950">
           Uplaud makes it easy to share honest feedback and earn rewards for your loyalty.
         </p>
 
