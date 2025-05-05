@@ -1,8 +1,6 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { CheckCheck } from "lucide-react";
-
 const Hero = () => {
   return <section className="relative pt-24 pb-20 md:pt-32 md:pb-28 overflow-hidden bg-[#6214a8]">
       <div className="absolute inset-0 backdrop-blur-sm bg-[#6214a8]/10"></div>
@@ -75,7 +73,7 @@ const Hero = () => {
                   {/* Customer Review Message */}
                   <div className="flex justify-end">
                     <div className="bg-[#DCF8C6] py-2 px-3 rounded-lg max-w-[85%] shadow-sm relative">
-                      <p className="text-sm">I highly recommend Trailblazer Travels for all travel and sports ticketing. I used their services and here is my experience: I booked my IPL tickets + hotel +travel package with them, and it was superb! I was taken care of at every step of the way and got great seats for the match. Also got a great price from them, and they are very professional. You should definitely try them!</p>
+                      <p className="text-sm text-neutral-900">I highly recommend Trailblazer Travels for all travel and sports ticketing. I used their services and here is my experience: I booked my IPL tickets + hotel +travel package with them, and it was superb! I was taken care of at every step of the way and got great seats for the match. Also got a great price from them, and they are very professional. You should definitely try them!</p>
                       <div className="flex justify-between items-center mt-1">
                         <div></div>
                         <div className="flex items-center">
@@ -96,10 +94,10 @@ const Hero = () => {
                   {/* Uplaud Message 1 */}
                   <div className="flex justify-start">
                     <div className="bg-white py-2 px-3 rounded-lg max-w-[85%] shadow-sm">
-                      <p className="text-sm">Thanks for your review for Fanatic Sports!</p>
-                      <p className="text-sm mt-2">Here is your review:</p>
-                      <p className="text-sm mt-2">I highly recommend Fanatic Sports for all travel and sports ticketing. I booked my IPL tickets + hotel +travel package with them, and it was superb! I was taken care of at every step of the way and got great seats for the match. Also got a great price from them, and they are very professional. You should definitely try them!</p>
-                      <p className="text-sm mt-3 font-medium">Uplaud Score (Star rating) : <br />5/5</p>
+                      <p className="text-sm text-zinc-900">Thanks for your review for Fanatic Sports!</p>
+                      <p className="text-sm mt-2 text-zinc-900">Here is your review:</p>
+                      <p className="text-sm mt-2 text-zinc-800">I highly recommend Fanatic Sports for all travel and sports ticketing. I booked my IPL tickets + hotel +travel package with them, and it was superb! I was taken care of at every step of the way and got great seats for the match. Also got a great price from them, and they are very professional. You should definitely try them!</p>
+                      <p className="text-sm mt-3 font-medium text-zinc-900">Uplaud Score (Star rating) : <br />5/5</p>
                       <div className="flex justify-between items-center mt-1">
                         <div></div>
                         <span className="text-xs text-gray-500">8:32 PM</span>
@@ -110,7 +108,7 @@ const Hero = () => {
                   {/* Uplaud Message 2 */}
                   <div className="flex justify-start">
                     <div className="bg-white py-2 px-3 rounded-lg max-w-[85%] shadow-sm">
-                      <p className="text-sm">We created this short blurb for you 👆, Share this review with your friend who may need it!</p>
+                      <p className="text-sm text-zinc-800">We created this short blurb for you 👆, Share this review with your friend who may need it!</p>
                       <div className="flex justify-between items-center mt-1">
                         <div></div>
                         <span className="text-xs text-gray-500">8:32 PM</span>
@@ -121,7 +119,7 @@ const Hero = () => {
                   {/* Uplaud Message 3 */}
                   <div className="flex justify-start">
                     <div className="bg-white py-2 px-3 rounded-lg max-w-[85%] shadow-sm">
-                      <p className="text-sm">Do your good deed for the day—Tap below to share your review with your friends 👋</p>
+                      <p className="text-sm text-zinc-900">Do your good deed for the day—Tap below to share your review with your friends 👋</p>
                       <div className="mt-2">
                         <a href="#" className="text-blue-600 underline">https://go.uplaud.ai/RTXYBX</a>
                       </div>
@@ -143,5 +141,4 @@ const Hero = () => {
       </div>
     </section>;
 };
-
 export default Hero;
