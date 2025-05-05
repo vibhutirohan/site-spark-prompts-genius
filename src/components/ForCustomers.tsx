@@ -189,10 +189,10 @@ const ForCustomers = () => {
               </div>
               
               <div className="flex space-x-3 mt-4">
-                <Button variant="outline" size="sm" className="flex items-center">
+                <Button variant="outline" size="sm" className="flex items-center text-uplaud-purple rounded-sm">
                   <Share className="h-4 w-4 mr-1" /> Share Recommendation
                 </Button>
-                <Button variant="outline" size="sm" className="flex items-center">
+                <Button variant="outline" size="sm" className="flex items-center text-uplaud-purple">
                   <Users className="h-4 w-4 mr-1" /> Join Circles
                 </Button>
               </div>
