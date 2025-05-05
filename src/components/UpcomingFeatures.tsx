@@ -1,6 +1,12 @@
 import React, { useRef, useEffect } from "react";
-const UpcomingFeatures = () => {
+
+interface UpcomingFeaturesProps {
+  className?: string;
+}
+
+const UpcomingFeatures = ({ className = "" }: UpcomingFeaturesProps) => {
   const sectionRef = useRef<HTMLElement>(null);
+  
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -27,7 +33,8 @@ const UpcomingFeatures = () => {
       }
     };
   }, []);
-  return <section id="features" ref={sectionRef} className="bg-white py-0">
+  
+  return <section id="features" ref={sectionRef} className={`py-20 ${className}`}>
       <div className="section-container">
         <h2 className="section-title fade-in-scroll">
           Coming <span className="gradient-text">Soon</span>
@@ -80,4 +87,5 @@ const UpcomingFeatures = () => {
       </div>
     </section>;
 };
+
 export default UpcomingFeatures;

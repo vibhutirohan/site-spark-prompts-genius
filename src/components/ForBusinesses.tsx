@@ -1,8 +1,11 @@
-
 import React, { useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 
-const ForBusinesses = () => {
+interface ForBusinessesProps {
+  className?: string;
+}
+
+const ForBusinesses = ({ className = "" }: ForBusinessesProps) => {
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -36,7 +39,7 @@ const ForBusinesses = () => {
   }, []);
 
   return (
-    <section id="for-businesses" ref={sectionRef} className="py-20 bg-white">
+    <section id="for-businesses" ref={sectionRef} className={`py-20 ${className}`}>
       <div className="section-container">
         <h2 className="section-title fade-in-scroll">
           Turn Customer Love Into <span className="gradient-text">Business Growth.</span>

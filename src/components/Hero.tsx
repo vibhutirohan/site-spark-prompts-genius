@@ -1,9 +1,11 @@
+
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { CheckCheck } from "lucide-react";
+
 const Hero = () => {
-  return <section className="relative pt-24 pb-20 md:pt-32 md:pb-28 overflow-hidden">
-      <div className=""></div>
+  return <section className="relative pt-24 pb-20 md:pt-32 md:pb-28 overflow-hidden bg-[#6214a8]">
+      <div className="absolute inset-0 backdrop-blur-sm bg-[#6214a8]/10"></div>
       
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col lg:flex-row items-center">
@@ -141,4 +143,5 @@ const Hero = () => {
       </div>
     </section>;
 };
+
 export default Hero;

@@ -1,7 +1,11 @@
 
 import React, { useRef, useEffect } from "react";
 
-const HowItWorks = () => {
+interface HowItWorksProps {
+  className?: string;
+}
+
+const HowItWorks = ({ className = "" }: HowItWorksProps) => {
   const sectionRef = useRef<HTMLElement>(null);
   
   useEffect(() => {
@@ -34,7 +38,7 @@ const HowItWorks = () => {
   }, []);
   
   return (
-    <section id="how-it-works" ref={sectionRef} className="py-20 bg-[#6214a8]/80">
+    <section id="how-it-works" ref={sectionRef} className={`py-20 ${className}`}>
       <div className="section-container">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
           <div className="bg-white/10 backdrop-blur-md rounded-xl shadow-md p-8 relative fade-in-scroll hover:shadow-lg transition-all duration-300 border border-white/20">
