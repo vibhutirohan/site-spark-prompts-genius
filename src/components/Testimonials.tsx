@@ -29,10 +29,10 @@ const Testimonials = () => {
   }, []);
   return <section ref={sectionRef} className="py-20 bg-gray-50">
       <div className="section-container">
-        <h2 className="section-title fade-in-scroll">
+        <h2 className="section-title fade-in-scroll font-normal text-uplaud-purple">
           Trusted by <span className="gradient-text">Forward-Thinking Businesses</span>
         </h2>
-        <p className="section-subtitle fade-in-scroll">
+        <p className="section-subtitle fade-in-scroll text-slate-950">
           See what our customers are saying about the Uplaud experience.
         </p>
 

@@ -99,7 +99,7 @@ const ForBusinesses = ({
               </div>
               
               <div className="mt-8 fade-in-scroll">
-                <Button className="hover:bg-uplaud-dark-purple text-zinc-50 bg-emerald-600 hover:bg-emerald-500">Start Growing Your Business!</Button>
+                <Button className="hover:bg-uplaud-dark-purple text-zinc-50 bg-emerald-400 hover:bg-emerald-300">Start Growing Your Business!</Button>
               </div>
             </div>
           </div>
