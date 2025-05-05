@@ -1,7 +1,9 @@
+
 import React from "react";
 import { Button } from "@/components/ui/button";
+
 const CTA = () => {
-  return <section className="py-20 bg-uplaud-purple text-white">
+  return <section className="py-20 bg-[#5EEAD4] text-[#111827]">
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -11,7 +13,7 @@ const CTA = () => {
             Join businesses that are already using Uplaud to gather authentic reviews and turn happy customers into powerful referrals.
           </p>
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-            <Button size="lg" className="text-lg px-8 text-slate-50 bg-teal-600 hover:bg-teal-500">
+            <Button size="lg" className="text-lg px-8 bg-[#6214a8] hover:bg-[#6214a8]/80 text-white">
               Get Started Free
             </Button>
             
@@ -23,4 +25,5 @@ const CTA = () => {
       </div>
     </section>;
 };
+
 export default CTA;

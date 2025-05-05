@@ -1,14 +1,16 @@
+
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { CheckCheck } from "lucide-react";
+
 const Hero = () => {
   return <section className="relative pt-24 pb-20 md:pt-32 md:pb-28 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-uplaud-purple/5 to-transparent z-0"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-[#6214a8]/30 to-[#6214a8] z-0"></div>
       
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col lg:flex-row items-center">
           <div className="w-full lg:w-1/2 text-center lg:text-left mb-10 lg:mb-0">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white">
               <span className="">Real Reviews.</span>
               <br />
               <span>Real People.</span>
@@ -16,15 +18,17 @@ const Hero = () => {
               <span className="gradient-text">Real Growth.</span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-xl mx-auto lg:mx-0">
+            <p className="text-xl md:text-2xl text-white/80 mb-8 max-w-xl mx-auto lg:mx-0">
               Uplaud turns every happy customer into a powerful referral — straight from WhatsApp.
             </p>
             
             <div className="flex flex-col sm:flex-row justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
-              <Button size="lg" className="hover:bg-uplaud-dark-purple text-white text-lg px-6 font-normal bg-teal-600 hover:bg-teal-500">
+              <Button size="lg" className="text-lg px-6 font-normal bg-[#5EEAD4] hover:bg-[#5EEAD4]/80 text-[#111827]">
                 Get Started
               </Button>
-              <Button size="lg" variant="outline" className="border-uplaud-purple text-lg px-6 bg-uplaud-purple text-slate-50">Try it !</Button>
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 text-lg px-6">
+                Try it!
+              </Button>
             </div>
           </div>
           
@@ -34,8 +38,8 @@ const Hero = () => {
               <div className="bg-white rounded-xl shadow-xl overflow-hidden border border-gray-200">
                 {/* WhatsApp Header */}
                 <div className="bg-[#128C7E] p-3 flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-full bg-uplaud-purple flex items-center justify-center">
-                    <span className="text-white font-bold">U</span>
+                  <div className="w-9 h-9 rounded-full bg-[#5EEAD4] flex items-center justify-center">
+                    <span className="text-[#111827] font-bold">U</span>
                   </div>
                   <div>
                     <p className="text-white font-medium">Uplaud AI</p>
@@ -130,8 +134,8 @@ const Hero = () => {
                 </div>
               </div>
               
-              <div className="absolute -bottom-6 -right-6 bg-uplaud-green rounded-full p-4 shadow-lg animate-bounce">
-                <span className="text-white font-bold text-xl">+100</span>
+              <div className="absolute -bottom-6 -right-6 bg-[#5EEAD4] rounded-full p-4 shadow-lg animate-bounce">
+                <span className="text-[#111827] font-bold text-xl">+100</span>
               </div>
             </div>
           </div>
@@ -139,4 +143,5 @@ const Hero = () => {
       </div>
     </section>;
 };
+
 export default Hero;
