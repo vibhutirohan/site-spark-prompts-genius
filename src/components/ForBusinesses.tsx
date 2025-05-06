@@ -1,16 +1,12 @@
-
 import React, { useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-
 interface ForBusinessesProps {
   className?: string;
 }
-
 const ForBusinesses = ({
   className = ""
 }: ForBusinessesProps) => {
   const sectionRef = useRef<HTMLElement>(null);
-
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -21,7 +17,6 @@ const ForBusinesses = ({
     }, {
       threshold: 0.1
     });
-
     const section = sectionRef.current;
     if (section) {
       const fadeElements = section.querySelectorAll(".fade-in-scroll");
@@ -29,7 +24,6 @@ const ForBusinesses = ({
         observer.observe(element);
       });
     }
-
     return () => {
       if (section) {
         const fadeElements = section.querySelectorAll(".fade-in-scroll");
@@ -39,7 +33,6 @@ const ForBusinesses = ({
       }
     };
   }, []);
-
   return <section id="for-businesses" ref={sectionRef} className={`py-20 bg-uplaud-purple ${className}`}>
       <div className="section-container">
         <h2 className="section-title fade-in-scroll text-white">
@@ -117,7 +110,7 @@ const ForBusinesses = ({
           
           <div>
             <div className="bg-white rounded-xl shadow-xl overflow-hidden fade-in-scroll">
-              <div className="p-4 bg-emerald-500">
+              <div className="p-4 bg-teal-300">
                 <h3 className="font-bold text-lg text-uplaud-purple">Business Dashboard</h3>
               </div>
               
@@ -216,5 +209,4 @@ const ForBusinesses = ({
       </div>
     </section>;
 };
-
 export default ForBusinesses;
