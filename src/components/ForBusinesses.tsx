@@ -110,8 +110,8 @@ const ForBusinesses = ({
           
           <div>
             <div className="bg-white rounded-xl shadow-xl overflow-hidden fade-in-scroll">
-              <div className="bg-uplaud-purple p-4">
-                <h3 className="text-white font-bold text-lg">Business Dashboard</h3>
+              <div className="p-4 bg-emerald-500">
+                <h3 className="font-bold text-lg text-uplaud-purple">Business Dashboard</h3>
               </div>
               
               <div className="p-6">
