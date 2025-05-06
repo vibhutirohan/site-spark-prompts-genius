@@ -126,8 +126,8 @@ const ForBusinesses = ({
                   <div className="bg-gray-50 p-4 rounded-lg">
                     <p className="text-sm text-gray-500 mb-1">Reviews Collected</p>
                     <div className="flex items-end">
-                      <p className="text-2xl font-bold mr-2">248</p>
-                      <p className="text-xs text-uplaud-green flex items-center">
+                      <p className="text-2xl font-bold mr-2 text-uplaud-purple">248</p>
+                      <p className="text-uplaud-green flex items-center text-sm">
                         <span className="mr-1">↑</span>
                         12%
                       </p>
@@ -137,8 +137,8 @@ const ForBusinesses = ({
                   <div className="bg-gray-50 p-4 rounded-lg">
                     <p className="text-sm text-gray-500 mb-1">Avg. Rating</p>
                     <div className="flex items-end">
-                      <p className="text-2xl font-bold mr-2">4.8</p>
-                      <p className="text-xs text-uplaud-green flex items-center">
+                      <p className="text-2xl font-bold mr-2 text-uplaud-purple">4.8</p>
+                      <p className="text-uplaud-green flex items-center text-sm">
                         <span className="mr-1">↑</span>
                         0.3
                       </p>
@@ -148,8 +148,8 @@ const ForBusinesses = ({
                   <div className="bg-gray-50 p-4 rounded-lg">
                     <p className="text-sm text-gray-500 mb-1">Referrals Generated</p>
                     <div className="flex items-end">
-                      <p className="text-2xl font-bold mr-2">72</p>
-                      <p className="text-xs text-uplaud-green flex items-center">
+                      <p className="text-2xl font-bold mr-2 text-uplaud-purple">72</p>
+                      <p className="text-uplaud-green flex items-center text-sm">
                         <span className="mr-1">↑</span>
                         18%
                       </p>
@@ -159,8 +159,8 @@ const ForBusinesses = ({
                   <div className="bg-gray-50 p-4 rounded-lg">
                     <p className="text-sm text-gray-500 mb-1">New Customers</p>
                     <div className="flex items-end">
-                      <p className="text-2xl font-bold mr-2">23</p>
-                      <p className="text-xs text-uplaud-green flex items-center">
+                      <p className="text-2xl font-bold mr-2 text-uplaud-purple">23</p>
+                      <p className="text-uplaud-green flex items-center text-sm">
                         <span className="mr-1">↑</span>
                         5
                       </p>
