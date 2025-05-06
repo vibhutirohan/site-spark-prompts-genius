@@ -37,10 +37,10 @@ const UpcomingFeatures = ({ className = "" }: UpcomingFeaturesProps) => {
   
   return <section id="features" ref={sectionRef} className={`py-20 ${className}`}>
       <div className="section-container">
-        <h2 className="section-title fade-in-scroll text-white">
+        <h2 className="section-title fade-in-scroll text-gray-100">
           Coming <span className="gradient-text">Soon</span>
         </h2>
-        <p className="section-subtitle fade-in-scroll text-white">
+        <p className="section-subtitle fade-in-scroll text-gray-100">
           We're constantly evolving to bring you the best tools for customer feedback and referrals.
         </p>
 
