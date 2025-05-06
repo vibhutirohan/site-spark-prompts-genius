@@ -35,13 +35,13 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
-      <Hero /> {/* Purple */}
-      <ForCustomers className="bg-white text-slate-950" /> {/* White */}
-      <ForBusinesses className="bg-[#6214a8] text-white" /> {/* Purple */}
-      <HowItWorks className="bg-white text-slate-950" /> {/* White */}
-      <UpcomingFeatures className="bg-[#6214a8] text-white" /> {/* Purple */}
-      <Testimonials /> {/* Already white */}
-      <CTA /> {/* Mint green with dark text */}
+      <Hero />
+      <ForCustomers />
+      <ForBusinesses />
+      <HowItWorks />
+      <UpcomingFeatures />
+      <Testimonials />
+      <CTA />
       <Footer />
     </div>
   );
