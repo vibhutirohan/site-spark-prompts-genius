@@ -1,7 +1,9 @@
 
 import React, { useRef, useEffect } from "react";
+
 const Testimonials = () => {
   const sectionRef = useRef<HTMLElement>(null);
+
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -12,6 +14,7 @@ const Testimonials = () => {
     }, {
       threshold: 0.1
     });
+
     const section = sectionRef.current;
     if (section) {
       const fadeElements = section.querySelectorAll(".fade-in-scroll");
@@ -19,6 +22,7 @@ const Testimonials = () => {
         observer.observe(element);
       });
     }
+
     return () => {
       if (section) {
         const fadeElements = section.querySelectorAll(".fade-in-scroll");
@@ -28,12 +32,13 @@ const Testimonials = () => {
       }
     };
   }, []);
-  return <section ref={sectionRef} className="py-20 bg-gray-50">
+
+  return <section ref={sectionRef} className="py-20 bg-uplaud-purple">
       <div className="section-container">
-        <h2 className="section-title fade-in-scroll font-normal text-uplaud-purple">
+        <h2 className="section-title fade-in-scroll font-normal text-white">
           Trusted by <span className="gradient-text">Forward-Thinking Businesses</span>
         </h2>
-        <p className="section-subtitle fade-in-scroll text-slate-950">
+        <p className="section-subtitle fade-in-scroll text-white">
           See what our customers are saying about the Uplaud experience.
         </p>
 
@@ -90,16 +95,11 @@ const Testimonials = () => {
         </div>
 
         <div className="mt-16 fade-in-scroll">
-          
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
-            
-            
-            
-            
-            
           </div>
         </div>
       </div>
     </section>;
 };
+
 export default Testimonials;
