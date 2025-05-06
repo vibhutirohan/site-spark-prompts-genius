@@ -1,12 +1,16 @@
+
 import React, { useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+
 interface ForBusinessesProps {
   className?: string;
 }
+
 const ForBusinesses = ({
   className = ""
 }: ForBusinessesProps) => {
   const sectionRef = useRef<HTMLElement>(null);
+
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -17,6 +21,7 @@ const ForBusinesses = ({
     }, {
       threshold: 0.1
     });
+
     const section = sectionRef.current;
     if (section) {
       const fadeElements = section.querySelectorAll(".fade-in-scroll");
@@ -24,6 +29,7 @@ const ForBusinesses = ({
         observer.observe(element);
       });
     }
+
     return () => {
       if (section) {
         const fadeElements = section.querySelectorAll(".fade-in-scroll");
@@ -33,12 +39,13 @@ const ForBusinesses = ({
       }
     };
   }, []);
-  return <section id="for-businesses" ref={sectionRef} className={`py-20 ${className}`}>
+
+  return <section id="for-businesses" ref={sectionRef} className={`py-20 bg-uplaud-purple ${className}`}>
       <div className="section-container">
-        <h2 className="section-title fade-in-scroll">
+        <h2 className="section-title fade-in-scroll text-white">
           Turn Customer Love Into <span className="gradient-text">Business Growth.</span>
         </h2>
-        <p className="section-subtitle fade-in-scroll">
+        <p className="section-subtitle fade-in-scroll text-white">
           Uplaud helps businesses collect authentic reviews and transform satisfied customers into your most effective marketing channel.
         </p>
 
@@ -209,4 +216,5 @@ const ForBusinesses = ({
       </div>
     </section>;
 };
+
 export default ForBusinesses;
