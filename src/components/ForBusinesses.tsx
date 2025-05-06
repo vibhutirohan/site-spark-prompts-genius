@@ -98,7 +98,7 @@ const ForBusinesses = ({
                 </div>
               </div>
               
-              <div className="mt-8 fade-in-scroll">
+              <div className="mt-8 fade-in-scroll px-[50px]">
                 <Button className="hover:bg-uplaud-dark-purple text-zinc-50 bg-emerald-400 hover:bg-emerald-300" asChild>
                   <a href="https://docs.google.com/forms/d/e/1FAIpQLScOFSp2wEGN50-d58e43laMRW2RuPbEr4407R34pZVw4eDYhA/viewform?usp=header" target="_blank" rel="noopener noreferrer">
                     Start Growing Your Business!
