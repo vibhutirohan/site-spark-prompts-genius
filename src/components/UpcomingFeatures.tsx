@@ -35,8 +35,7 @@ const UpcomingFeatures = ({ className = "" }: UpcomingFeaturesProps) => {
     };
   }, []);
   
-  return (
-    <section id="features" ref={sectionRef} className={`py-20 ${className}`}>
+  return <section id="features" ref={sectionRef} className={`py-20 ${className}`}>
       <div className="section-container">
         <h2 className="section-title fade-in-scroll text-gray-100">
           Coming <span className="gradient-text">Soon</span>
@@ -84,11 +83,10 @@ const UpcomingFeatures = ({ className = "" }: UpcomingFeaturesProps) => {
         </div>
         
         <div className="mt-16">
-          <!-- Future content could go here -->
+          
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
 
 export default UpcomingFeatures;
