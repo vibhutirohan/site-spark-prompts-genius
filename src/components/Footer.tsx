@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Link } from "react-router-dom";
 const Footer = () => {
@@ -59,11 +60,9 @@ const Footer = () => {
             <Link to="/privacy-policy" className="text-sm text-gray-500 hover:text-[#6214a8] transition-colors">
               Privacy Policy
             </Link>
-            <a href="#" className="text-sm text-gray-500 hover:text-[#6214a8] transition-colors">
+            <Link to="/terms-of-service" className="text-sm text-gray-500 hover:text-[#6214a8] transition-colors">
               Terms of Service
-            </a>
-            <a href="#" className="text-sm text-gray-500 hover:text-[#6214a8] transition-colors">
-          </a>
+            </Link>
           </div>
         </div>
       </div>
