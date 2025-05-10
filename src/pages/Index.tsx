@@ -36,8 +36,8 @@ const Index = () => {
     <div className="min-h-screen bg-white">
       <Navbar />
       <Hero />
-      <ForCustomers />
       <ForBusinesses />
+      <ForCustomers />
       <HowItWorks />
       <UpcomingFeatures />
       <Testimonials />
