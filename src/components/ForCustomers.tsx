@@ -1,3 +1,4 @@
+
 import React, { useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Share, Users } from "lucide-react";
@@ -29,7 +30,7 @@ const ForCustomers = () => {
       }
     };
   }, []);
-  return <section id="for-customers" ref={sectionRef} className="py-20 bg-gray-50">
+  return <section id="for-customers" ref={sectionRef} className="py-20 bg-white">
       <div className="section-container">
         <h2 className="section-title fade-in-scroll text-slate-950">
           Trusted Word of Mouth, <span className="gradient-text text-gray-800">Straight From WhatsApp.</span>

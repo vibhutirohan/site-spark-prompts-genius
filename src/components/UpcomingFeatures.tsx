@@ -1,3 +1,4 @@
+
 import React, { useRef, useEffect } from "react";
 interface UpcomingFeaturesProps {
   className?: string;
@@ -32,7 +33,7 @@ const UpcomingFeatures = ({
       }
     };
   }, []);
-  return <section id="features" ref={sectionRef} className={`py-20 ${className}`}>
+  return <section id="features" ref={sectionRef} className={`py-20 bg-white ${className}`}>
       <div className="section-container">
         <h2 className="section-title fade-in-scroll text-gray-950">
           Coming <span className="gradient-text text-emerald-600">Soon</span>
