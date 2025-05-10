@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { CheckCheck } from "lucide-react";
@@ -99,9 +98,9 @@ const Hero = () => {
                   {/* Uplaud Message 1 */}
                   <div className="flex justify-start">
                     <div className="bg-white py-2 px-3 rounded-lg max-w-[85%] shadow-sm">
-                      <p className="text-sm text-zinc-900">Thanks for your review for Fanatic Sports!</p>
+                      <p className="text-sm text-zinc-900">Thanks for your review for Trailblazer Travels!</p>
                       <p className="text-sm mt-2 text-zinc-900">Here is your review:</p>
-                      <p className="text-sm mt-2 text-zinc-800">I highly recommend Fanatic Sports for all travel and sports ticketing. I booked my IPL tickets + hotel +travel package with them, and it was superb! I was taken care of at every step of the way and got great seats for the match. Also got a great price from them, and they are very professional. You should definitely try them!</p>
+                      <p className="text-sm mt-2 text-zinc-800">I highly recommend Trailblazer Travels for all travel and sports ticketing. I booked my IPL tickets + hotel +travel package with them, and it was superb! I was taken care of at every step of the way and got great seats for the match. Also got a great price from them, and they are very professional. You should definitely try them!</p>
                       <p className="text-sm mt-3 font-medium text-zinc-900">Uplaud Score (Star rating) : <br />5/5</p>
                       <div className="flex justify-between items-center mt-1">
                         <div></div>
@@ -124,7 +123,7 @@ const Hero = () => {
                   {/* Uplaud Message 3 */}
                   <div className="flex justify-start">
                     <div className="bg-white py-2 px-3 rounded-lg max-w-[85%] shadow-sm">
-                      <p className="text-sm text-zinc-900">Do your good deed for the day—Tap below to share your review with your friends 👋</p>
+                      <p className="text-sm text-zinc-900">Share your insightful review with your friends, and earn points that you can redeem on Uplaud! Tap below to share your review with someone who may need it 👋</p>
                       <div className="mt-2">
                         <a href="#" className="text-blue-600 underline">https://go.uplaud.ai/RTXYBX</a>
                       </div>

@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect } from "react";
 interface UpcomingFeaturesProps {
   className?: string;
@@ -50,9 +49,7 @@ const UpcomingFeatures = ({
               </svg>
             </div>
             <h3 className="text-xl font-bold mb-3 text-slate-900">Verified Badges</h3>
-            <p className="text-slate-700">
-              Boost credibility with verified customer badges displayed alongside reviews to add an extra layer of trust.
-            </p>
+            <p className="text-slate-700">Boost credibility with verified customer badges displayed alongside reviews to add an extra layer of trust.</p>
           </div>
           
           <div className="rounded-xl p-8 transition-all duration-300 hover:shadow-md fade-in-scroll bg-teal-400">

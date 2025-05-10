@@ -34,9 +34,7 @@ const ForCustomers = () => {
         <h2 className="section-title fade-in-scroll text-slate-950">
           Trusted Word of Mouth, <span className="gradient-text text-gray-800">Straight From WhatsApp.</span>
         </h2>
-        <p className="section-subtitle fade-in-scroll text-slate-950">
-          Uplaud makes it easy to share honest feedback and earn rewards for your loyalty.
-        </p>
+        <p className="section-subtitle fade-in-scroll text-slate-950">Uplaud makes it easy to share honest feedback and earn rewards for your loyalty (coming soon).</p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mt-16">
           <div className="order-2 md:order-1">
@@ -62,21 +60,21 @@ const ForCustomers = () => {
                   <div className="space-y-3">
                     <div className="flex justify-between items-center bg-gray-50 p-3 rounded-lg">
                       <div>
-                        <p className="font-medium">Review Submitted</p>
+                        <p className="font-medium text-uplaud-purple">Review Submitted</p>
                         <p className="text-sm text-gray-500">Tech Gadgets Store</p>
                       </div>
                       <p className="text-uplaud-green font-bold">+100</p>
                     </div>
                     <div className="flex justify-between items-center bg-gray-50 p-3 rounded-lg">
                       <div>
-                        <p className="font-medium">Referral Bonus</p>
+                        <p className="font-medium text-uplaud-purple">Referral Bonus</p>
                         <p className="text-sm text-gray-500">Friend signed up</p>
                       </div>
                       <p className="text-uplaud-green font-bold">+250</p>
                     </div>
                     <div className="flex justify-between items-center bg-gray-50 p-3 rounded-lg">
                       <div>
-                        <p className="font-medium">Points Redeemed</p>
+                        <p className="font-medium text-uplaud-purple">Points Redeemed</p>
                         <p className="text-sm text-gray-500">$10 Gift Card</p>
                       </div>
                       <p className="text-red-500 font-bold">-200</p>
@@ -88,12 +86,12 @@ const ForCustomers = () => {
                   <p className="text-gray-600 mb-3">Available Rewards</p>
                   <div className="grid grid-cols-2 gap-4">
                     <div className="border border-gray-200 rounded-lg p-3 hover:border-uplaud-purple cursor-pointer transition-colors">
-                      <p className="font-medium">$5 Gift Card</p>
-                      <p className="text-sm text-uplaud-purple">200 points</p>
+                      <p className="font-medium text-uplaud-purple">$5 Gift Card</p>
+                      <p className="text-sm text-gray-800">200 points</p>
                     </div>
                     <div className="border border-gray-200 rounded-lg p-3 hover:border-uplaud-purple cursor-pointer transition-colors">
-                      <p className="font-medium">Free Coffee</p>
-                      <p className="text-sm text-uplaud-purple">150 points</p>
+                      <p className="font-medium text-uplaud-purple">Free Coffee</p>
+                      <p className="text-sm text-gray-900">150 points</p>
                     </div>
                   </div>
                 </div>

@@ -69,7 +69,7 @@ const ForBusinesses = ({
                 </div>
                 <div>
                   <h4 className="text-xl font-semibold mb-2">📣 Supercharge Social Proof</h4>
-                  <p className="text-slate-50">We transform reviews into viral, shareable social proof.</p>
+                  <p className="text-slate-50">We transform reviews into viral, shareable social proof- that you can instantly share on social media.</p>
                 </div>
               </div>
               
