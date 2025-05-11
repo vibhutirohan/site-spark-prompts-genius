@@ -99,8 +99,8 @@ const Hero = () => {
                   <div className="flex justify-start">
                     <div className="bg-white py-2 px-3 rounded-lg max-w-[85%] shadow-sm">
                       <p className="text-sm text-zinc-900">Thanks for your review for Trailblazer Travels!</p>
-                      <p className="text-sm mt-2 text-zinc-900">Here is your review:</p>
-                      <p className="text-sm mt-2 text-zinc-800">I highly recommend Trailblazer Travels for all travel and sports ticketing. I booked my IPL tickets + hotel +travel package with them, and it was superb! I was taken care of at every step of the way and got great seats for the match. Also got a great price from them, and they are very professional. You should definitely try them!</p>
+                      <p className="text-sm mt-2 text-zinc-900">See your review here:</p>
+                      <p className="text-blue-600 underline\n">https://www.uplaud.ai/profile/AndrewH</p>
                       <p className="text-sm mt-3 font-medium text-zinc-900">Uplaud Score (Star rating) : <br />5/5</p>
                       <div className="flex justify-between items-center mt-1">
                         <div></div>
