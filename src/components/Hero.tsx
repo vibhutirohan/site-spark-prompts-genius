@@ -111,19 +111,15 @@ const Hero = () => {
                   
                   {/* Uplaud Message 2 */}
                   <div className="flex justify-start">
-                    <div className="bg-white py-2 px-3 rounded-lg max-w-[85%] shadow-sm">
-                      <p className="text-sm text-zinc-800">We created this short blurb for you 👆, Share this review with your friend who may need it!</p>
-                      <div className="flex justify-between items-center mt-1">
-                        <div></div>
-                        <span className="text-xs text-gray-500">8:32 PM</span>
-                      </div>
-                    </div>
+                    
                   </div>
                   
                   {/* Uplaud Message 3 */}
                   <div className="flex justify-start">
                     <div className="bg-white py-2 px-3 rounded-lg max-w-[85%] shadow-sm">
-                      <p className="text-sm text-zinc-900">Share your insightful review with your friends, and earn points that you can redeem on Uplaud! Tap below to share your review with someone who may need it 👋</p>
+                      <p className="text-sm text-zinc-900">Spread the love — and earn rewards! 🌟
+Share your authentic review with friends who’ll love it — and rack up points you can redeem on Uplaud.
+Tap below to help someone discover something amazing! 👋</p>
                       <div className="mt-2">
                         <a href="#" className="text-blue-600 underline">https://go.uplaud.ai/RTXYBX</a>
                       </div>
