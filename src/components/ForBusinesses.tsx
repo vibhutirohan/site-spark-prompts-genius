@@ -56,7 +56,7 @@ const ForBusinesses = ({
                   </svg>
                 </div>
                 <div>
-                  <h4 className="text-xl font-semibold mb-2">Boost Reviews</h4>
+                  <h4 className="text-xl font-semibold mb-2">🚀Boost Reviews</h4>
                   <p className="text-slate-50">Get 60% more reviews via voice, text on WhatsApp.</p>
                 </div>
               </div>
@@ -93,7 +93,7 @@ const ForBusinesses = ({
                   </svg>
                 </div>
                 <div>
-                  <h4 className="text-xl font-semibold mb-2">Customizable Rewards</h4>
+                  <h4 className="text-xl font-semibold mb-2">🎁Customizable Rewards</h4>
                   <p className="text-slate-50">Design a loyalty program that aligns with your brand and resonates with your customers.</p>
                 </div>
               </div>
