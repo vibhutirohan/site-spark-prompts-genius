@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Share, Users } from "lucide-react";
@@ -194,9 +193,7 @@ const ForCustomers = () => {
                   </a>
                 </Button>
                 <Button variant="outline" size="sm" className="flex items-center text-uplaud-purple" asChild>
-                  <a href="https://docs.google.com/forms/d/e/1FAIpQLScOFSp2wEGN50-d58e43laMRW2RuPbEr4407R34pZVw4eDYhA/viewform?usp=header" target="_blank" rel="noopener noreferrer">
-                    <Users className="h-4 w-4 mr-1" /> Join Circles
-                  </a>
+                  
                 </Button>
               </div>
             </div>
