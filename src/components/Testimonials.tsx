@@ -1,9 +1,6 @@
-
 import React, { useRef, useEffect } from "react";
-
 const Testimonials = () => {
   const sectionRef = useRef<HTMLElement>(null);
-
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -14,7 +11,6 @@ const Testimonials = () => {
     }, {
       threshold: 0.1
     });
-
     const section = sectionRef.current;
     if (section) {
       const fadeElements = section.querySelectorAll(".fade-in-scroll");
@@ -22,7 +18,6 @@ const Testimonials = () => {
         observer.observe(element);
       });
     }
-
     return () => {
       if (section) {
         const fadeElements = section.querySelectorAll(".fade-in-scroll");
@@ -32,7 +27,6 @@ const Testimonials = () => {
       }
     };
   }, []);
-
   return <section ref={sectionRef} className="py-20 bg-uplaud-purple">
       <div className="section-container">
         <h2 className="section-title fade-in-scroll font-normal text-white">
@@ -67,7 +61,7 @@ const Testimonials = () => {
                 <span className="font-bold text-uplaud-purple">CP</span>
               </div>
               <div>
-                <h4 className="font-bold text-slate-950">Charul Pel</h4>
+                <h4 className="font-bold text-slate-950">Charu Pel</h4>
                 <p className="text-sm text-gray-950">GRC3</p>
               </div>
             </div>
@@ -101,5 +95,4 @@ const Testimonials = () => {
       </div>
     </section>;
 };
-
 export default Testimonials;
