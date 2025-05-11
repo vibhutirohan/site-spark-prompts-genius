@@ -100,7 +100,7 @@ const Hero = () => {
                     <div className="bg-white py-2 px-3 rounded-lg max-w-[85%] shadow-sm">
                       <p className="text-sm text-zinc-900">Thanks for your review for Trailblazer Travels!</p>
                       <p className="text-sm mt-2 text-zinc-900">See your review here:</p>
-                      <p className="text-blue-600 underline\n">https://review.uplaud.ai/BenH</p>
+                      <p className="text-blue-600 underline">https://review.uplaud.ai/BenH</p>
                       <p className="text-sm mt-3 font-medium text-zinc-900">Uplaud Score (Star rating) : <br />5/5</p>
                       <div className="flex justify-between items-center mt-1">
                         <div></div>
@@ -121,7 +121,7 @@ const Hero = () => {
 Share your authentic review with friends who’ll love it — and rack up points you can redeem on Uplaud.
 Tap below to help someone discover something amazing! 👋</p>
                       <div className="mt-2">
-                        <a href="#" className="text-blue-600 underline">https://go.uplaud.ai/BenHTrailblazer</a>
+                        <a href="#" className="text-blue-600 underline">https://go.uplaud.ai/BenHTrailb</a>
                       </div>
                       <div className="flex justify-between items-center mt-1">
                         <div></div>
