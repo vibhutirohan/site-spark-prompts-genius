@@ -27,7 +27,7 @@ const Login = () => {
     }
 
     if (!formData.password.trim()) {
-      newErrors.password = 'OTP/Password is required';
+      newErrors.password = 'Password is required';
     }
 
     setErrors(newErrors);
@@ -43,19 +43,19 @@ const Login = () => {
 
     setIsLoading(true);
     
-    // Simulate OTP verification (for demo, accept "123456" as valid OTP)
+    // Simulate login verification (for demo, accept "password123" as valid password)
     setTimeout(() => {
       setIsLoading(false);
       
-      if (formData.password === '123456') {
+      if (formData.password === 'password123') {
         toast({
           title: "Login Successful!",
           description: "Welcome back to Uplaud.",
         });
-        // Redirect to dashboard (for now, redirect to home)
-        navigate('/');
+        // Redirect to dashboard
+        navigate('/dashboard');
       } else {
-        setErrors({ password: 'Invalid OTP. Please try "123456" for demo.' });
+        setErrors({ password: 'Invalid password. Please try "password123" for demo.' });
       }
     }, 1500);
   };
@@ -107,12 +107,12 @@ const Login = () => {
 
               <div className="space-y-2">
                 <Label htmlFor="password" className="text-slate-700 font-medium">
-                  OTP / Verification Code
+                  Password
                 </Label>
                 <Input
                   id="password"
                   type="password"
-                  placeholder="Enter OTP (use 123456 for demo)"
+                  placeholder="Enter your password"
                   value={formData.password}
                   onChange={(e) => handleInputChange('password', e.target.value)}
                   className={`${errors.password ? 'border-red-500' : 'border-slate-300'} focus:border-[#6214a8]`}
@@ -121,7 +121,7 @@ const Login = () => {
                   <p className="text-red-500 text-sm">{errors.password}</p>
                 )}
                 <p className="text-xs text-slate-500">
-                  For demo purposes, use "123456" as the OTP
+                  For demo purposes, use "password123"
                 </p>
               </div>
 
@@ -130,7 +130,7 @@ const Login = () => {
                 disabled={isLoading}
                 className="w-full bg-[#6214a8] hover:bg-[#4c0e7a] text-white font-medium py-2.5 mt-6"
               >
-                {isLoading ? 'Verifying...' : 'Login'}
+                {isLoading ? 'Logging in...' : 'Login'}
               </Button>
             </form>
 
@@ -144,12 +144,6 @@ const Login = () => {
                   Register here
                 </Link>
               </p>
-            </div>
-
-            <div className="mt-4 text-center">
-              <button className="text-[#6214a8] hover:text-[#4c0e7a] text-sm font-medium">
-                Resend OTP
-              </button>
             </div>
           </CardContent>
         </Card>
