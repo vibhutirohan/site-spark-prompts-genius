@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -57,11 +56,11 @@ const Navbar = () => {
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="outline" className="border-[#5EEAD4] text-[#5EEAD4] hover:bg-[#5EEAD4]/10">
-              Login
+            <Button variant="outline" className="border-[#5EEAD4] text-[#5EEAD4] hover:bg-[#5EEAD4]/10" asChild>
+              <Link to="/login">Login</Link>
             </Button>
-            <Button className="bg-[#5EEAD4] hover:bg-[#5EEAD4]/80 text-[#111827] font-medium">
-              Register
+            <Button className="bg-[#5EEAD4] hover:bg-[#5EEAD4]/80 text-[#111827] font-medium" asChild>
+              <Link to="/register">Register</Link>
             </Button>
           </div>
 
@@ -92,11 +91,11 @@ const Navbar = () => {
                 How It Works
               </a>
               <div className="flex flex-col space-y-2 pt-2 border-t border-white/20">
-                <Button variant="outline" className="border-[#5EEAD4] text-[#5EEAD4] hover:bg-[#5EEAD4]/10 w-full">
-                  Login
+                <Button variant="outline" className="border-[#5EEAD4] text-[#5EEAD4] hover:bg-[#5EEAD4]/10 w-full" asChild>
+                  <Link to="/login" onClick={() => setIsMobileMenuOpen(false)}>Login</Link>
                 </Button>
-                <Button className="bg-[#5EEAD4] hover:bg-[#5EEAD4]/80 text-[#111827] w-full font-medium">
-                  Register
+                <Button className="bg-[#5EEAD4] hover:bg-[#5EEAD4]/80 text-[#111827] w-full font-medium" asChild>
+                  <Link to="/register" onClick={() => setIsMobileMenuOpen(false)}>Register</Link>
                 </Button>
               </div>
             </div>
