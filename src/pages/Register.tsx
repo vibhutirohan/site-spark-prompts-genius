@@ -6,17 +6,20 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
+import { useAuth } from '@/contexts/AuthContext';
 
 const Register = () => {
   const [formData, setFormData] = useState({
     fullName: '',
     phoneNumber: '',
-    email: ''
+    email: '',
+    password: ''
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const { toast } = useToast();
+  const { signUp } = useAuth();
 
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
@@ -31,8 +34,16 @@ const Register = () => {
       newErrors.phoneNumber = 'Please enter a valid phone number';
     }
 
-    if (formData.email && !/\S+@\S+\.\S+/.test(formData.email)) {
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required';
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
       newErrors.email = 'Please enter a valid email address';
+    }
+
+    if (!formData.password.trim()) {
+      newErrors.password = 'Password is required';
+    } else if (formData.password.length < 6) {
+      newErrors.password = 'Password must be at least 6 characters';
     }
 
     setErrors(newErrors);
@@ -48,15 +59,27 @@ const Register = () => {
 
     setIsLoading(true);
     
-    // Simulate API call
-    setTimeout(() => {
+    try {
+      const { error } = await signUp(formData.email, formData.password, formData.fullName, formData.phoneNumber);
+      
+      if (error) {
+        if (error.message.includes('User already registered')) {
+          setErrors({ email: 'User with this email already exists' });
+        } else {
+          setErrors({ submit: error.message });
+        }
+      } else {
+        toast({
+          title: "Registration Successful!",
+          description: "Please check your email to confirm your account, then you can login.",
+        });
+        navigate('/login');
+      }
+    } catch (error) {
+      setErrors({ submit: 'An unexpected error occurred' });
+    } finally {
       setIsLoading(false);
-      toast({
-        title: "Registration Successful!",
-        description: "Welcome to Uplaud. You can now login with your phone number.",
-      });
-      navigate('/login');
-    }, 1500);
+    }
   };
 
   const handleInputChange = (field: string, value: string) => {
@@ -123,7 +146,7 @@ const Register = () => {
 
               <div className="space-y-2">
                 <Label htmlFor="email" className="text-slate-700 font-medium">
-                  Email (Optional)
+                  Email *
                 </Label>
                 <Input
                   id="email"
@@ -137,6 +160,27 @@ const Register = () => {
                   <p className="text-red-500 text-sm">{errors.email}</p>
                 )}
               </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="password" className="text-slate-700 font-medium">
+                  Password *
+                </Label>
+                <Input
+                  id="password"
+                  type="password"
+                  placeholder="Create a password (min 6 characters)"
+                  value={formData.password}
+                  onChange={(e) => handleInputChange('password', e.target.value)}
+                  className={`${errors.password ? 'border-red-500' : 'border-slate-300'} focus:border-[#6214a8]`}
+                />
+                {errors.password && (
+                  <p className="text-red-500 text-sm">{errors.password}</p>
+                )}
+              </div>
+
+              {errors.submit && (
+                <p className="text-red-500 text-sm">{errors.submit}</p>
+              )}
 
               <Button
                 type="submit"

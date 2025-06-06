@@ -1,30 +1,59 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { LogOut, User } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { useAuth } from '@/contexts/AuthContext';
+import { useUserProfile } from '@/hooks/useUserProfile';
 
 const Dashboard = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
+  const { user, signOut, loading: authLoading } = useAuth();
+  const { profile, loading: profileLoading } = useUserProfile();
 
-  const handleLogout = () => {
-    toast({
-      title: "Logged out successfully",
-      description: "You have been logged out of your Uplaud account.",
-    });
-    navigate('/');
+  // Redirect to login if not authenticated
+  useEffect(() => {
+    if (!authLoading && !user) {
+      navigate('/login');
+    }
+  }, [user, authLoading, navigate]);
+
+  const handleLogout = async () => {
+    try {
+      await signOut();
+      toast({
+        title: "Logged out successfully",
+        description: "You have been logged out of your Uplaud account.",
+      });
+      navigate('/');
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to log out. Please try again.",
+        variant: "destructive"
+      });
+    }
   };
 
-  // Placeholder data (in a real app, this would come from authentication state/API)
-  const userData = {
-    name: "John Doe",
-    phoneNumber: "+1 (555) 123-4567",
-    email: "john.doe@example.com",
-    reviewsSubmitted: 12
-  };
+  // Show loading state
+  if (authLoading || profileLoading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-[#6214a8] to-[#4c0e7a] flex items-center justify-center">
+        <div className="text-white text-xl">Loading...</div>
+      </div>
+    );
+  }
+
+  // Don't render anything if user is not authenticated (will redirect)
+  if (!user || !profile) {
+    return null;
+  }
+
+  // Calculate some stats (placeholder for now)
+  const reviewsSubmitted = 0; // This would come from a reviews table in the future
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#6214a8] to-[#4c0e7a] px-4 py-8">
@@ -36,7 +65,7 @@ const Dashboard = () => {
               My Dashboard
             </h1>
             <p className="text-xl text-[#5EEAD4]">
-              Welcome back, {userData.name}!
+              Welcome back, {profile.full_name}!
             </p>
           </div>
           <Button
@@ -63,7 +92,7 @@ const Dashboard = () => {
             </CardHeader>
             <CardContent>
               <div className="text-3xl font-bold text-[#6214a8] mb-2">
-                {userData.reviewsSubmitted}
+                {reviewsSubmitted}
               </div>
               <p className="text-sm text-slate-600">
                 Thank you for helping others make better decisions!
@@ -89,7 +118,7 @@ const Dashboard = () => {
                     Full Name
                   </label>
                   <p className="text-slate-900 bg-slate-50 p-3 rounded-md">
-                    {userData.name}
+                    {profile.full_name}
                   </p>
                 </div>
                 <div>
@@ -97,7 +126,7 @@ const Dashboard = () => {
                     WhatsApp Phone Number
                   </label>
                   <p className="text-slate-900 bg-slate-50 p-3 rounded-md">
-                    {userData.phoneNumber}
+                    {profile.phone_number}
                   </p>
                 </div>
               </div>
@@ -106,7 +135,7 @@ const Dashboard = () => {
                   Email Address
                 </label>
                 <p className="text-slate-900 bg-slate-50 p-3 rounded-md">
-                  {userData.email || "Not provided"}
+                  {profile.email}
                 </p>
               </div>
             </CardContent>

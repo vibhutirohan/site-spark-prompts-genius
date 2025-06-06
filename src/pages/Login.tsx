@@ -1,29 +1,38 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
+import { useAuth } from '@/contexts/AuthContext';
 
 const Login = () => {
   const [formData, setFormData] = useState({
-    phoneNumber: '',
+    email: '',
     password: ''
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const { toast } = useToast();
+  const { signIn, user } = useAuth();
+
+  // Redirect if already logged in
+  useEffect(() => {
+    if (user) {
+      navigate('/dashboard');
+    }
+  }, [user, navigate]);
 
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
 
-    if (!formData.phoneNumber.trim()) {
-      newErrors.phoneNumber = 'WhatsApp phone number is required';
-    } else if (!/^\+?[\d\s\-\(\)]{10,}$/.test(formData.phoneNumber)) {
-      newErrors.phoneNumber = 'Please enter a valid phone number';
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required';
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = 'Please enter a valid email address';
     }
 
     if (!formData.password.trim()) {
@@ -43,21 +52,27 @@ const Login = () => {
 
     setIsLoading(true);
     
-    // Simulate login verification (for demo, accept "password123" as valid password)
-    setTimeout(() => {
-      setIsLoading(false);
+    try {
+      const { error } = await signIn(formData.email, formData.password);
       
-      if (formData.password === 'password123') {
+      if (error) {
+        if (error.message.includes('Invalid login credentials')) {
+          setErrors({ submit: 'Invalid email or password' });
+        } else {
+          setErrors({ submit: error.message });
+        }
+      } else {
         toast({
           title: "Login Successful!",
           description: "Welcome back to Uplaud.",
         });
-        // Redirect to dashboard
         navigate('/dashboard');
-      } else {
-        setErrors({ password: 'Invalid password. Please try "password123" for demo.' });
       }
-    }, 1500);
+    } catch (error) {
+      setErrors({ submit: 'An unexpected error occurred' });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleInputChange = (field: string, value: string) => {
@@ -89,19 +104,19 @@ const Login = () => {
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="phoneNumber" className="text-slate-700 font-medium">
-                  WhatsApp Phone Number
+                <Label htmlFor="email" className="text-slate-700 font-medium">
+                  Email
                 </Label>
                 <Input
-                  id="phoneNumber"
-                  type="tel"
-                  placeholder="+1 (555) 123-4567"
-                  value={formData.phoneNumber}
-                  onChange={(e) => handleInputChange('phoneNumber', e.target.value)}
-                  className={`${errors.phoneNumber ? 'border-red-500' : 'border-slate-300'} focus:border-[#6214a8]`}
+                  id="email"
+                  type="email"
+                  placeholder="your@email.com"
+                  value={formData.email}
+                  onChange={(e) => handleInputChange('email', e.target.value)}
+                  className={`${errors.email ? 'border-red-500' : 'border-slate-300'} focus:border-[#6214a8]`}
                 />
-                {errors.phoneNumber && (
-                  <p className="text-red-500 text-sm">{errors.phoneNumber}</p>
+                {errors.email && (
+                  <p className="text-red-500 text-sm">{errors.email}</p>
                 )}
               </div>
 
@@ -120,10 +135,11 @@ const Login = () => {
                 {errors.password && (
                   <p className="text-red-500 text-sm">{errors.password}</p>
                 )}
-                <p className="text-xs text-slate-500">
-                  For demo purposes, use "password123"
-                </p>
               </div>
+
+              {errors.submit && (
+                <p className="text-red-500 text-sm">{errors.submit}</p>
+              )}
 
               <Button
                 type="submit"
