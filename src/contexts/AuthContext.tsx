@@ -1,3 +1,4 @@
+
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { User, Session } from '@supabase/supabase-js';
 import { supabase } from '@/integrations/supabase/client';
@@ -7,7 +8,7 @@ interface AuthContextType {
   session: Session | null;
   loading: boolean;
   signUp: (email: string, password: string, fullName: string, phoneNumber: string) => Promise<{ error: any }>;
-  signIn: (emailOrPhone: string, password: string) => Promise<{ error: any }>;
+  signIn: (email: string, password: string) => Promise<{ error: any }>;
   signOut: () => Promise<void>;
 }
 
@@ -19,31 +20,6 @@ export const useAuth = () => {
     throw new Error('useAuth must be used within an AuthProvider');
   }
   return context;
-};
-
-// Helper function to detect if input is email or phone
-const isEmail = (input: string): boolean => {
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return emailRegex.test(input);
-};
-
-// Helper function to normalize phone number
-const normalizePhoneNumber = (phone: string): string => {
-  // Remove all non-digits
-  const digits = phone.replace(/\D/g, '');
-  
-  // If it starts with 1 and has 11 digits, keep as is
-  if (digits.length === 11 && digits.startsWith('1')) {
-    return digits;
-  }
-  
-  // If it has 10 digits, add country code 1
-  if (digits.length === 10) {
-    return '1' + digits;
-  }
-  
-  // Return as is for other formats
-  return digits;
 };
 
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -89,28 +65,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     return { error };
   };
 
-  const signIn = async (emailOrPhone: string, password: string) => {
-    let email = emailOrPhone;
-    
-    // If input is not an email, treat it as phone number and look up email
-    if (!isEmail(emailOrPhone)) {
-      const normalizedPhone = normalizePhoneNumber(emailOrPhone);
-      
-      // Look up email by phone number in users table
-      const { data, error } = await supabase
-        .from('users')
-        .select('email')
-        .eq('phone_number', normalizedPhone)
-        .single();
-      
-      if (error || !data) {
-        return { error: { message: 'Phone number not found. Please check your phone number or register first.' } };
-      }
-      
-      email = data.email;
-    }
-    
-    // Authenticate with email and password
+  const signIn = async (email: string, password: string) => {
     const { error } = await supabase.auth.signInWithPassword({
       email,
       password

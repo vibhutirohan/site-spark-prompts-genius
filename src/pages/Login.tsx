@@ -10,7 +10,7 @@ import { useAuth } from '@/contexts/AuthContext';
 
 const Login = () => {
   const [formData, setFormData] = useState({
-    emailOrPhone: '',
+    email: '',
     password: ''
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -29,14 +29,12 @@ const Login = () => {
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
 
-    if (!formData.emailOrPhone.trim()) {
-      newErrors.emailOrPhone = 'Email or phone number is required';
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required';
     } else {
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
-      
-      if (!emailRegex.test(formData.emailOrPhone) && !phoneRegex.test(formData.emailOrPhone.replace(/\D/g, ''))) {
-        newErrors.emailOrPhone = 'Please enter a valid email address or phone number';
+      if (!emailRegex.test(formData.email)) {
+        newErrors.email = 'Please enter a valid email address';
       }
     }
 
@@ -58,11 +56,11 @@ const Login = () => {
     setIsLoading(true);
     
     try {
-      const { error } = await signIn(formData.emailOrPhone, formData.password);
+      const { error } = await signIn(formData.email, formData.password);
       
       if (error) {
         if (error.message.includes('Invalid login credentials')) {
-          setErrors({ submit: 'Invalid email/phone or password' });
+          setErrors({ submit: 'Invalid email or password' });
         } else {
           setErrors({ submit: error.message });
         }
@@ -109,19 +107,19 @@ const Login = () => {
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="emailOrPhone" className="text-slate-700 font-medium">
-                  Email or Phone Number
+                <Label htmlFor="email" className="text-slate-700 font-medium">
+                  Email
                 </Label>
                 <Input
-                  id="emailOrPhone"
-                  type="text"
-                  placeholder="your@email.com or phone number"
-                  value={formData.emailOrPhone}
-                  onChange={(e) => handleInputChange('emailOrPhone', e.target.value)}
-                  className={`${errors.emailOrPhone ? 'border-red-500' : 'border-slate-300'} focus:border-[#6214a8]`}
+                  id="email"
+                  type="email"
+                  placeholder="your@email.com"
+                  value={formData.email}
+                  onChange={(e) => handleInputChange('email', e.target.value)}
+                  className={`${errors.email ? 'border-red-500' : 'border-slate-300'} focus:border-[#6214a8]`}
                 />
-                {errors.emailOrPhone && (
-                  <p className="text-red-500 text-sm">{errors.emailOrPhone}</p>
+                {errors.email && (
+                  <p className="text-red-500 text-sm">{errors.email}</p>
                 )}
               </div>
 

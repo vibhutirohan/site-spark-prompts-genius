@@ -12,30 +12,27 @@ export type Database = {
       users: {
         Row: {
           auth_user_id: string
-          created_at: string
-          email: string
-          full_name: string
+          created_at: string | null
+          email: string | null
+          full_name: string | null
           id: string
-          phone_number: string
-          updated_at: string
+          phone_number: string | null
         }
         Insert: {
-          auth_user_id: string
-          created_at?: string
-          email: string
-          full_name: string
+          auth_user_id?: string
+          created_at?: string | null
+          email?: string | null
+          full_name?: string | null
           id?: string
-          phone_number: string
-          updated_at?: string
+          phone_number?: string | null
         }
         Update: {
           auth_user_id?: string
-          created_at?: string
-          email?: string
-          full_name?: string
+          created_at?: string | null
+          email?: string | null
+          full_name?: string | null
           id?: string
-          phone_number?: string
-          updated_at?: string
+          phone_number?: string | null
         }
         Relationships: []
       }
