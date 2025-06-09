@@ -1,95 +1,78 @@
+// ✅ AuthContext.tsx
+import React, { useContext, useEffect, useState, createContext } from 'react';
+import { auth, db } from '@/lib/firebase';
+import {
+  createUserWithEmailAndPassword,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+  signOut as firebaseSignOut,
+  sendEmailVerification,
+} from 'firebase/auth';
+import { doc, setDoc, getDoc } from 'firebase/firestore';
 
-import React, { createContext, useContext, useEffect, useState } from 'react';
-import { User, Session } from '@supabase/supabase-js';
-import { supabase } from '@/integrations/supabase/client';
+const AuthContext = createContext(null);
 
-interface AuthContextType {
-  user: User | null;
-  session: Session | null;
-  loading: boolean;
-  signUp: (email: string, password: string, fullName: string, phoneNumber: string) => Promise<{ error: any }>;
-  signIn: (email: string, password: string) => Promise<{ error: any }>;
-  signOut: () => Promise<void>;
-}
-
-const AuthContext = createContext<AuthContextType | undefined>(undefined);
-
-export const useAuth = () => {
-  const context = useContext(AuthContext);
-  if (!context) {
-    throw new Error('useAuth must be used within an AuthProvider');
-  }
-  return context;
-};
-
-export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [user, setUser] = useState<User | null>(null);
-  const [session, setSession] = useState<Session | null>(null);
+export const AuthProvider = ({ children }) => {
+  const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Set up auth state listener
-    const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      (event, session) => {
-        setSession(session);
-        setUser(session?.user ?? null);
-        setLoading(false);
+    const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
+      if (firebaseUser && firebaseUser.emailVerified) {
+        const docRef = doc(db, 'users', firebaseUser.uid);
+        const userDoc = await getDoc(docRef);
+        setUser({ ...firebaseUser, ...userDoc.data() });
+      } else {
+        setUser(null);
       }
-    );
-
-    // Check for existing session
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setSession(session);
-      setUser(session?.user ?? null);
       setLoading(false);
     });
-
-    return () => subscription.unsubscribe();
+    return () => unsubscribe();
   }, []);
 
-  const signUp = async (email: string, password: string, fullName: string, phoneNumber: string) => {
-    const redirectUrl = `${window.location.origin}/`;
-    
-    const { error } = await supabase.auth.signUp({
-      email,
-      password,
-      options: {
-        emailRedirectTo: redirectUrl,
-        data: {
-          full_name: fullName,
-          phone_number: phoneNumber
-        }
+  const signUp = async (email, password, fullName, phoneNumber) => {
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+
+      await setDoc(doc(db, 'users', user.uid), {
+        full_name: fullName,
+        phone_number: phoneNumber,
+        email: email,
+        created_at: new Date().toISOString(),
+      });
+
+      await sendEmailVerification(user);
+      await firebaseSignOut(auth);
+      return { error: null };
+    } catch (error) {
+      return { error };
+    }
+  };
+
+  const signIn = async (email, password) => {
+    try {
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+
+      if (!user.emailVerified) {
+        await firebaseSignOut(auth);
+        return { error: { message: 'Please verify your email before logging in.' } };
       }
-    });
-    
-    return { error };
+
+      return { error: null };
+    } catch (error) {
+      return { error };
+    }
   };
 
-  const signIn = async (email: string, password: string) => {
-    const { error } = await supabase.auth.signInWithPassword({
-      email,
-      password
-    });
-    
-    return { error };
-  };
-
-  const signOut = async () => {
-    await supabase.auth.signOut();
-  };
-
-  const value = {
-    user,
-    session,
-    loading,
-    signUp,
-    signIn,
-    signOut
-  };
+  const signOut = () => firebaseSignOut(auth);
 
   return (
-    <AuthContext.Provider value={value}>
+    <AuthContext.Provider value={{ user, signUp, signIn, signOut, loading }}>
       {children}
     </AuthContext.Provider>
   );
 };
+
+export const useAuth = () => useContext(AuthContext);
