@@ -59,9 +59,7 @@ const Navbar = () => {
             <Button variant="outline" className="border-[#5EEAD4] text-[#5EEAD4] hover:bg-[#5EEAD4]/10" asChild>
               <Link to="/login">Login</Link>
             </Button>
-            <Button className="bg-[#5EEAD4] hover:bg-[#5EEAD4]/80 text-[#111827] font-medium" asChild>
-              <Link to="/register">Register</Link>
-            </Button>
+            
           </div>
 
           {/* Mobile Menu Button */}
