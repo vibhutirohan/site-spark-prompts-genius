@@ -1,103 +1,102 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+// src/pages/Login.tsx
+import { useState } from "react";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Toaster, toast } from "@/components/ui/sonner";
 
 const Login = () => {
-  const navigate = useNavigate();
-  const [whatsappNumber, setWhatsappNumber] = useState('');
-  const [otp, setOtp] = useState('');
-  const [step, setStep] = useState<'number' | 'otp'>('number');
-  const [error, setError] = useState('');
+  const [phone, setPhone] = useState("");
+  const [otp, setOtp] = useState("");
+  const [showOtpField, setShowOtpField] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const sendOTP = async () => {
+  const sendOtp = async () => {
+    if (!phone) return toast.error("Please enter your WhatsApp number");
+
+    setLoading(true);
     try {
-      setLoading(true);
-      const res = await fetch('http://localhost:5000/api/send-otp', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ whatsappNumber })
+      const res = await fetch("https://glorious-carnival-677wx9rq45rf5r44-5000.app.github.dev/api/send-otp", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ whatsappNumber: phone }),
       });
 
       const data = await res.json();
-      if (res.ok) {
-        setStep('otp');
-        setError('');
+      if (data.success) {
+        toast.success("OTP sent via WhatsApp (TextBelt)");
+        setShowOtpField(true);
       } else {
-        setError(data.message || 'Failed to send OTP');
+        toast.error(data.message || "Failed to send OTP");
       }
     } catch (err) {
-      setError('Server error. Try again.');
+      toast.error("Something went wrong");
     } finally {
       setLoading(false);
     }
   };
 
-  const verifyOTP = async () => {
+  const verifyOtp = async () => {
+    if (!otp) return toast.error("Please enter the OTP");
+
+    setLoading(true);
     try {
-      setLoading(true);
-      const res = await fetch('http://localhost:5000/api/verify-otp', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ whatsappNumber, otp })
+      const res = await fetch("https://glorious-carnival-677wx9rq45rf5r44-5000.app.github.dev/api/verify-otp", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ whatsappNumber: phone, otp }),
       });
 
       const data = await res.json();
-      if (res.ok) {
-        localStorage.setItem('authToken', data.token);
-        navigate('/dashboard');
+      if (data.success) {
+        toast.success("Login successful!");
+        localStorage.setItem("token", data.token);
+        window.location.href = "/dashboard";
       } else {
-        setError(data.message || 'Invalid OTP');
+        toast.error(data.message || "Invalid OTP");
       }
     } catch (err) {
-      setError('Server error. Try again.');
+      toast.error("Verification failed");
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-700 to-indigo-900 px-4">
-      <div className="backdrop-blur-lg bg-white/10 p-8 rounded-xl shadow-xl max-w-md w-full border border-white/20">
-        <h2 className="text-3xl font-bold text-white text-center mb-6">Login with WhatsApp</h2>
+    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-green-100 to-green-200">
+      <Toaster />
+      <Card className="w-full max-w-md shadow-2xl bg-white/80 backdrop-blur-md rounded-2xl border border-green-300">
+        <CardContent className="space-y-6 p-8">
+          <div className="text-center">
+            <h1 className="text-3xl font-bold text-green-800">Uplaud Login</h1>
+            <p className="text-sm text-green-700 mt-1">Use your WhatsApp number</p>
+          </div>
 
-        {step === 'number' ? (
-          <>
-            <input
-              type="text"
-              placeholder="Enter WhatsApp Number (with +91 or +1)"
-              className="w-full px-4 py-2 rounded-lg bg-white/20 text-white placeholder-white/80 focus:outline-none focus:ring-2 focus:ring-purple-300"
-              value={whatsappNumber}
-              onChange={(e) => setWhatsappNumber(e.target.value)}
-            />
-            {error && <p className="text-red-400 text-sm mt-2">{error}</p>}
-            <button
-              onClick={sendOTP}
-              disabled={loading}
-              className="mt-4 w-full py-2 bg-purple-600 hover:bg-purple-700 transition rounded-lg text-white font-semibold"
-            >
-              {loading ? 'Sending...' : 'Send OTP'}
-            </button>
-          </>
-        ) : (
-          <>
-            <input
+          <Input
+            type="text"
+            placeholder="Enter WhatsApp Number (e.g., +1XXXXXXXXXX)"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+          />
+
+          {showOtpField && (
+            <Input
               type="text"
               placeholder="Enter OTP"
-              className="w-full px-4 py-2 rounded-lg bg-white/20 text-white placeholder-white/80 focus:outline-none focus:ring-2 focus:ring-purple-300"
               value={otp}
               onChange={(e) => setOtp(e.target.value)}
             />
-            {error && <p className="text-red-400 text-sm mt-2">{error}</p>}
-            <button
-              onClick={verifyOTP}
-              disabled={loading}
-              className="mt-4 w-full py-2 bg-purple-600 hover:bg-purple-700 transition rounded-lg text-white font-semibold"
-            >
-              {loading ? 'Verifying...' : 'Verify OTP'}
-            </button>
-          </>
-        )}
-      </div>
+          )}
+
+          <Button
+            onClick={showOtpField ? verifyOtp : sendOtp}
+            disabled={loading}
+            className="w-full bg-green-600 hover:bg-green-700 text-white text-lg py-6"
+          >
+            {loading ? "Processing..." : showOtpField ? "Verify OTP" : "Send OTP"}
+          </Button>
+        </CardContent>
+      </Card>
     </div>
   );
 };
