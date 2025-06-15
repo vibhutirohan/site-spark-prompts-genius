@@ -55,12 +55,7 @@ const Navbar = () => {
             </NavigationMenu>
           </div>
 
-          <div className="hidden md:flex items-center space-x-4">
-            <Button variant="outline" className="border-[#5EEAD4] text-[#5EEAD4] hover:bg-[#5EEAD4]/10" asChild>
-              <Link to="/login">Login</Link>
-            </Button>
-            
-          </div>
+      
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center">
